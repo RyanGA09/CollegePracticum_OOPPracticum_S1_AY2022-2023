@@ -16,7 +16,9 @@ public class LoginPage {
             kodeAkses = input.nextLine();
 
             if (Authentication.login(username, kodeAkses)){
+                System.out.println("---------------");
                 System.out.println("Login Berhasil.");
+                System.out.println("---------------");
                 break;
             } else {
                 loginGagal();

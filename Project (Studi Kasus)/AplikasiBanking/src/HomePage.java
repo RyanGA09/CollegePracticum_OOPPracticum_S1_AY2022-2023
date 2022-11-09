@@ -20,7 +20,7 @@ public class HomePage {
             menu = input.nextInt();
             input.nextLine();
             switchMenu(menu);
-        }while (menu != 0);
+        }while (menu != 3);
     }
 
     private void switchMenu(int menu){
@@ -31,7 +31,8 @@ public class HomePage {
             case 2:
                 new RegistrationPage();
                 break;
-            case 0:
+            case 3:
+                Authentication.logOut();
                 break;
         }
     }

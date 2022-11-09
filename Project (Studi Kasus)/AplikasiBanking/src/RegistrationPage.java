@@ -21,14 +21,11 @@ public class RegistrationPage {
         System.out.print("Kode Akses: ");
         kodeAkses = input.nextLine();
 
-        User user = new User(namaLengkap, nik, noTelpon, username, kodeAkses);
-
         System.out.print("Buat pin: ");
         String pin = input.nextLine();
 
-        String noRekening = RandomNumberString.getNumeric(6);
-        Rekening rekening = new Rekening(noRekening, pin);
-        Bank.tambahUser(user, rekening);
+        Authentication.register(namaLengkap, nik, noTelpon, username, kodeAkses, pin);
+
 
         System.out.println("Berhasil Membuat akun");
     }
