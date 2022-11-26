@@ -1,6 +1,8 @@
 public class Transaksi
 {
-    String jenisTransaksi, tanggalTransaksi, nominalTransaksi, totalBayar;
+    protected String jenisTransaksi, nominalTransaksi, totalBayar, tanggalTransaksi;
+    public Transaksi(){
+    }
     public Transaksi(String jenis, String nominal, String total){
         jenisTransaksi = jenis;
         nominalTransaksi = nominal;
