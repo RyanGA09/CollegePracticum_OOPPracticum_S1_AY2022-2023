@@ -1,16 +1,29 @@
-public class Rekening
-{
-    String nomorRekening, pin;
-    Saldo nilaiSaldo = new Saldo();
+import java.util.ArrayList;
 
-    public Rekening(String nomor, String pin) {
-        nomorRekening = nomor;
+public class Rekening extends Saldo {
+    private String nomorRekening;
+    private String pin;
+    private ArrayList<Transaksi> mutasi = new ArrayList<>();
+
+    public Rekening(String nomorRekening, String pin) {
+        this.nomorRekening = nomorRekening;
         this.pin = pin;
     }
 
-    public void dataRekening(){
-        nilaiSaldo.dataSaldo();
-        System.out.println("Nomor Rekening: "+nomorRekening);
-        System.out.println("Pin Rekening: "+pin);
+    public String getNoRekening() {
+        return nomorRekening;
     }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public ArrayList<Transaksi> getMutasi() {
+        return mutasi;
+    }
+
+    public void tambahTransaksi(Transaksi transaksi) {
+        mutasi.add(transaksi);
+    }
+
 }

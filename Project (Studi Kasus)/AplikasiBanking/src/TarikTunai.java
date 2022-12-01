@@ -1,9 +1,12 @@
-public class TarikTunai extends Transaksi{
-    int nominalTarik;
-    public TarikTunai(int nominalTarik, String jenisTransaksi, String nominalTransaksi, String totalBayar){
+public class TarikTunai extends Transaksi {
+    private int nominalTarik;
+
+    public TarikTunai(int nominalTarik) {
         this.nominalTarik = nominalTarik;
-        super.jenisTransaksi = jenisTransaksi;
-        super.nominalTransaksi = nominalTransaksi;
-        super.totalBayar = totalBayar;
+    }
+
+    @Override
+    public int getNominal() {
+        return nominalTarik;
     }
 }

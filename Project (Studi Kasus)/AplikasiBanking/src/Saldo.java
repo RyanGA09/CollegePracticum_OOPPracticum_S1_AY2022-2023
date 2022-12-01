@@ -6,11 +6,19 @@ public class Saldo
         jumlahSaldo += nilai;
     }
 
-    public void ambilSaldo(int nilai){
-        jumlahSaldo -= nilai;
+    public boolean ambilSaldo(int nilai){
+        if (jumlahSaldo >= nilai){
+            jumlahSaldo -= nilai;
+            return true;
+        }
+        return false;
     }
 
     public void dataSaldo(){
         System.out.println("Jumlah Saldo = "+jumlahSaldo);
+    }
+
+    public int getSaldo() {
+        return jumlahSaldo;
     }
 }
