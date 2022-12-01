@@ -28,7 +28,7 @@ public class Mahasiswa{
     }
 
 
-    public void create(String nama, String alamat, int noTelepon, int npm, String password)
+    public void create(String nama, String alamat, String noTelepon, int npm, String password)
     {
         this.mahasiswa.add(new DataMahasiswa(nama, alamat, noTelepon, npm, password));
     }

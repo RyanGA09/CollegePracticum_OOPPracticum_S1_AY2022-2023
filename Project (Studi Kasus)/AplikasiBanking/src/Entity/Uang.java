@@ -1,0 +1,16 @@
+package Entity;
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
+public class Uang {
+    public static String format(int nominal) {
+        DecimalFormat rupiah = new DecimalFormat();
+        DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
+
+        formatRp.setGroupingSeparator('.');
+        rupiah.setDecimalFormatSymbols(formatRp);
+
+        return rupiah.format(nominal);
+    }
+}

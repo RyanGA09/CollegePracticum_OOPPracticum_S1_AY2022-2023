@@ -28,7 +28,7 @@ public class Tutor{
     }
 
 
-    public void create(String nama, String alamat, int noTelepon, int nip, String password)
+    public void create(String nama, String alamat, String noTelepon, int nip, String password)
     {
         this.tutor.add(new DataTutor(nama, alamat, noTelepon, nip, password));
     }

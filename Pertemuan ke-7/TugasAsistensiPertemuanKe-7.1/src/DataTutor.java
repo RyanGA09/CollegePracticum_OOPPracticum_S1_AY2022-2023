@@ -3,7 +3,7 @@ public class DataTutor extends Member {
     public int getNip() {
         return nip;
     }
-    DataTutor(String nama, String alamat, int noTelepon, int nip, String password) {
+    DataTutor(String nama, String alamat, String noTelepon, int nip, String password) {
         super.nama = nama;
         super.alamat = alamat;
         super.noTelepon = noTelepon;

@@ -5,10 +5,10 @@ public class Kinerja {
         //input Data Mahasiswa
         Mahasiswa mahasiswa = new Mahasiswa();
         Tutor tutor = new Tutor();
-        mahasiswa.create("Ryan", "Raya mastrip 177", 419382948, 7467, "ryanga");
-        mahasiswa.create("Mutiara", "Pondok Maritim", 936301749, 9869, "mdsq");
-        tutor.create("Arif", "Griya taman Asri", 946292837, 1543, "rif");
-        tutor.create("Ferdinand", "Royal Residence", 937219275, 1653, "frdnd");
+        mahasiswa.create("Ryan", "Raya mastrip 177", "085109257770", 7467, "ryanga");
+        mahasiswa.create("Mutiara", "Pondok Maritim", "03707458392", 9869, "mdsq");
+        tutor.create("Arif", "Griya taman Asri", "038058472", 1543, "rif");
+        tutor.create("Ferdinand", "Royal Residence", "03859273", 1653, "frdnd");
         mahasiswa.read();
         tutor.read();
 

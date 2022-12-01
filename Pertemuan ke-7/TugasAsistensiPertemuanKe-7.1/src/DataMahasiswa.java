@@ -3,7 +3,7 @@ public class DataMahasiswa extends Member {
     public int getNpm() {
         return npm;
     }
-    DataMahasiswa(String nama, String alamat, int noTelepon, int npm, String password) {
+    DataMahasiswa(String nama, String alamat, String noTelepon, int npm, String password) {
         super.nama = nama;
         super.alamat = alamat;
         super.noTelepon = noTelepon;
