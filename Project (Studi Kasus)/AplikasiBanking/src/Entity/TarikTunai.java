@@ -1,6 +1,7 @@
 package Entity;
 
 public class TarikTunai extends Transaksi {
+
     private int nominalTarik;
 
     public TarikTunai(int nominalTarik) {

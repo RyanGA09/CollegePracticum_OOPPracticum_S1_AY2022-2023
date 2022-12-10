@@ -1,7 +1,7 @@
 package Entity;
 
-public class Saldo
-{
+public class Saldo {
+
     int jumlahSaldo = 0;
 
     public void tambahSaldo(int nilai){
@@ -15,10 +15,6 @@ public class Saldo
         }
         return false;
     }
-
-//    public void dataSaldo(){
-//        System.out.println("Jumlah Entity.Saldo = "+jumlahSaldo);
-//    }
 
     public int getSaldo() {
         return jumlahSaldo;

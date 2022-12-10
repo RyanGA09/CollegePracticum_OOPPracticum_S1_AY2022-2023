@@ -1,10 +1,12 @@
 package View;
 
 import Model.Authentication;
+import View.ViewConfirmation.VerificationPage;
 
 import java.util.Scanner;
 
 public class HomePage {
+
     private Scanner input = new Scanner(System.in);
 
     public HomePage(){
@@ -31,13 +33,12 @@ public class HomePage {
         switch (menu){
             case 1:
                 new LoginPage();
-                new MainPage();
                 break;
             case 2:
                 new RegistrationPage();
                 break;
             case 3:
-                Authentication.logOut();
+                new VerificationPage().exitConfirm();
                 break;
         }
     }

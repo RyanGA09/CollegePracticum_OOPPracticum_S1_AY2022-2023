@@ -1,9 +1,9 @@
 package Entity;
 
 public class Transfer extends Transaksi {
+
     private int nilaiNominal;
-    private User userAsal;
-    private User userTujuan;
+    private User userAsal, userTujuan;
 
     public Transfer(int nominal, User userAsal, User userTujuan) {
         this.nilaiNominal = nominal;

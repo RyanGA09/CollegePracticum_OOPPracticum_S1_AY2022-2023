@@ -1,6 +1,7 @@
 package Entity;
 
 public class SetorTunai extends Transaksi {
+
     private int nominalSetor;
 
     public SetorTunai(int nominalSetor) {

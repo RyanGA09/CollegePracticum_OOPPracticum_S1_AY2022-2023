@@ -4,17 +4,14 @@ import Entity.Transaksi;
 import Entity.Transfer;
 import Entity.User;
 import Entity.Rekening;
+import Model.Authentication;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Bank {
-    static ArrayList<User> userTerdaftar = new ArrayList<User>();
 
-//  static Entity.User userTerdaftar = null;
-
-//    public static Entity.User getUserTerdaftar(){
-//        return userTerdaftar;
-//    }
+    private static ArrayList<User> userTerdaftar = new ArrayList<User>();
 
     public static ArrayList<User> getUserTerdaftar() {
         return userTerdaftar;
@@ -65,11 +62,28 @@ public class Bank {
         return false;
     }
 
-//    public static boolean VerifTransaction(){
-//
-//    }
+    public static boolean verifPin() {
+        Scanner input = new Scanner(System.in);
+        int percobaan = 3;
 
-    public static int cekSaldo(User pengguna) {
-        return pengguna.getRekening().getSaldo();
+        do {
+            percobaan -= 1;
+            System.out.print("Masukan PIN: ");
+            String pin = input.nextLine();
+
+            boolean status = Authentication.verifPin(pin);
+
+            if (!status) {
+                if (percobaan == 0) {
+                    System.out.println("Anda Salah memasukan PIN sebanyak 3x");
+                    return false;
+                } else {
+                    System.out.println("PIN Salah !");
+                }
+            } else {
+                return true;
+            }
+        } while (percobaan != 0);
+        return false;
     }
 }

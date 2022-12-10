@@ -1,6 +1,7 @@
 package Entity;
 
 public class User {
+
     private int idUser;
     private String fullname, noTelpon, nik, username, kodeAkses;
     private Rekening rekening;

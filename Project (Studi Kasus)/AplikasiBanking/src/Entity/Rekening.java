@@ -1,11 +1,9 @@
 package Entity;
 
-import Entity.Saldo;
-import Entity.Transaksi;
-
 import java.util.ArrayList;
 
 public class Rekening extends Saldo {
+
     private String nomorRekening;
     private String pin;
     private ArrayList<Transaksi> mutasi = new ArrayList<>();
@@ -30,5 +28,4 @@ public class Rekening extends Saldo {
     public void tambahTransaksi(Transaksi transaksi) {
         mutasi.add(transaksi);
     }
-
 }

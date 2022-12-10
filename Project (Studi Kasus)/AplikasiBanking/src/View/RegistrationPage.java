@@ -1,9 +1,11 @@
 package View;
 
 import Model.Authentication;
+import View.ViewConfirmation.VerificationPage;
 
 import java.util.Scanner;
 public class RegistrationPage {
+
     private Scanner input = new Scanner(System.in);
 
     public RegistrationPage(){
@@ -24,13 +26,10 @@ public class RegistrationPage {
         username = input.nextLine();
         System.out.print("Kode Akses: ");
         kodeAkses = input.nextLine();
-
         System.out.print("Buat pin: ");
         String pin = input.nextLine();
-
         Authentication.register(namaLengkap, nik, noTelpon, username, kodeAkses, pin);
-
-
         System.out.println("Berhasil Membuat akun");
+        System.out.println("========================");
     }
 }

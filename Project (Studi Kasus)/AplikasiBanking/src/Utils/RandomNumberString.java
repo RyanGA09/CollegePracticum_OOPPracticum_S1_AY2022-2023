@@ -1,6 +1,7 @@
 package Utils;
 
 public class RandomNumberString {
+
     public static String getNumeric(int nilai){
         String numericString = "0123456789";
 
