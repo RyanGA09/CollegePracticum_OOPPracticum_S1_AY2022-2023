@@ -1,6 +1,6 @@
 package View.ViewMainPage;
 
-import Entity.Uang;
+import Utils.Uang;
 import Model.Authentication;
 
 public class InfoSaldoPage {

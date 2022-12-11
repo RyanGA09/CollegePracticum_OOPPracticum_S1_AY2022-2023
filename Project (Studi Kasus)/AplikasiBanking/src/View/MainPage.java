@@ -1,7 +1,7 @@
 package View;
 
 import View.ViewMainPage.*;
-import View.ViewConfirmation.VerificationPage;
+import View.ViewConfirmation.LogOutConfirmPage;
 
 import java.util.Scanner;
 public class MainPage {
@@ -14,16 +14,16 @@ public class MainPage {
 
     private void initialPage() {
         System.out.println("=======================================");
-        System.out.println("------------- HOME BANKING ------------");
+        System.out.println("--------------- BANKING ---------------");
         System.out.println("=======================================");
         int menu;
         do {
             System.out.print("""
-                    1. Info Entity.Saldo
+                    1. Info Saldo
                     2. Setor Tunai
                     3. Tarik Tunai
-                    4. Entity.Transfer
-                    5. Mutasi Entity.Rekening
+                    4. Transfer
+                    5. Mutasi Rekening
                     6. Info Akun
                     0. Logout
                     """);
@@ -58,7 +58,7 @@ public class MainPage {
                 new InfoAkunPage();
                 break;
             case 0:
-                new VerificationPage().logOutConfirm();
+                new LogOutConfirmPage().logOutConfirm();
                 break;
             default:
                 System.out.println("Menu Tidak valid !");

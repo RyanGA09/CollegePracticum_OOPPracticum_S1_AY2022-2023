@@ -2,7 +2,7 @@ package View.ViewMainPage;
 
 import Controller.Bank;
 import Entity.Transfer;
-import Entity.Uang;
+import Utils.Uang;
 import Entity.User;
 import Model.Authentication;
 

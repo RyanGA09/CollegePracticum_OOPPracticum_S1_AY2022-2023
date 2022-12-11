@@ -1,4 +1,4 @@
-package Entity;
+package Utils;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

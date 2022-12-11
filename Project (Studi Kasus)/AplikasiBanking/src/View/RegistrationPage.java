@@ -1,7 +1,6 @@
 package View;
 
 import Model.Authentication;
-import View.ViewConfirmation.VerificationPage;
 
 import java.util.Scanner;
 public class RegistrationPage {

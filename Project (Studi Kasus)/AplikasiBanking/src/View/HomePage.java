@@ -1,7 +1,6 @@
 package View;
 
-import Model.Authentication;
-import View.ViewConfirmation.VerificationPage;
+import View.ViewConfirmation.ExitConfirmPage;
 
 import java.util.Scanner;
 
@@ -38,8 +37,7 @@ public class HomePage {
                 new RegistrationPage();
                 break;
             case 3:
-                new VerificationPage().exitConfirm();
-                break;
+                new ExitConfirmPage().exitConfirm();
         }
     }
 }

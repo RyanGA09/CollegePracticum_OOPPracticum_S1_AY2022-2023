@@ -2,7 +2,7 @@ package View.ViewMainPage;
 
 import Controller.Bank;
 import Entity.TarikTunai;
-import Entity.Uang;
+import Utils.Uang;
 import Model.Authentication;
 
 import java.util.Scanner;

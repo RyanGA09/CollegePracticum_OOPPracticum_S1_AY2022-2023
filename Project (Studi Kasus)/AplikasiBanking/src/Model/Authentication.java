@@ -7,7 +7,6 @@ import Entity.Rekening;
 import Controller.Bank;
 import View.HomePage;
 import View.MainPage;
-import View.RegistrationPage;
 
 public class Authentication {
 
@@ -68,12 +67,11 @@ public class Authentication {
     }
 
     public static void exit(char pilihan){
-        if (pilihan == 'y' || pilihan == 'Y'){
-            System.out.println();
+        if (pilihan == 'Y' || pilihan == 'y'){
             System.out.println("-----Keluar Aplikasi-----");
             userLogged = null;
         }
-        else if (pilihan == 'n' || pilihan == 'N'){
+        else if (pilihan == 'N' || pilihan == 'n'){
             new HomePage();
         }
     }
