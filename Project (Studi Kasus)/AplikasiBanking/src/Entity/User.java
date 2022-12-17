@@ -1,12 +1,12 @@
 package Entity;
 
-public class User {
+public class User{
 
-    private int idUser;
+//    private int idUser;
     private String fullname, noTelpon, nik, username, kodeAkses;
     private Rekening rekening;
 
-    public User (String nama, String nik, String phone, String username, String kode) {
+    public User (String nama, String nik, String phone, String username, String kode){
         fullname = nama;
         this.nik = nik;
         noTelpon = phone;
@@ -14,33 +14,37 @@ public class User {
         kodeAkses = kode;
     }
 
-    public String getFullname() {
+    public String getFullname(){
         return fullname;
     }
 
-    public String getNik() {
+    public String getNik(){
         return nik;
     }
 
-    public String getNoTelpon() {
+    public String getNoTelpon(){
         return noTelpon;
     }
 
-    public String getUsername() {
+    public String getUsername(){
         return username;
     }
 
-    public String getKodeAkses() {
+    public String getKodeAkses(){
         return kodeAkses;
     }
 
-    public Rekening getRekening() {
+    public Rekening getRekening(){
         return rekening;
     }
 
-    public int getIdUser() {
-        return idUser;
-    }
+//    public void setIdUser(int idUser) {
+//        this.idUser = idUser;
+//    }
+//
+//    public int getIdUser(){
+//        return idUser;
+//    }
 
     public void buatRekening(Rekening rekening){
         this.rekening = rekening;

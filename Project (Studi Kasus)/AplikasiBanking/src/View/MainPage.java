@@ -4,11 +4,11 @@ import View.ViewMainPage.*;
 import View.ViewConfirmation.LogOutConfirmPage;
 
 import java.util.Scanner;
-public class MainPage {
+public class MainPage{
 
     private Scanner input = new Scanner(System.in);
 
-    public MainPage() {
+    public MainPage(){
         initialPage();
     }
 
@@ -37,7 +37,7 @@ public class MainPage {
         } while (menu != 0);
     }
 
-    private void switchMenu(int menu) {
+    private void switchMenu(int menu){
         switch (menu) {
             case 1:
                 new InfoSaldoPage();

@@ -2,12 +2,12 @@ package View.ViewMainPage;
 
 import Controller.Bank;
 import Entity.TarikTunai;
-import Utils.Uang;
-import Model.Authentication;
+import Model.Modelling;
+import Utils.Keuangan;
 
 import java.util.Scanner;
 
-public class TarikTunaiPage {
+public class TarikTunaiPage{
 
     Scanner input = new Scanner(System.in);
 
@@ -15,10 +15,9 @@ public class TarikTunaiPage {
         tarikTunai();
     }
 
-    private void tarikTunai() {
-        System.out.println("------------- TARIK  SALDO ------------");
-
-        if (Bank.verifPin()) {
+    private void tarikTunai(){
+        System.out.println("------------ TARIK SALDO -----------");
+        if (Bank.verifikasiPin()){
             System.out.println("""
                     Masukan Nominal Entity.Saldo:
                     1. Rp. 50.000
@@ -28,13 +27,11 @@ public class TarikTunaiPage {
                     5. Rp. 1.000.000
                     6. Rp. 2.000.000
                     0. Batal""");
-
             System.out.print("Pilih: ");
             int pilihNominal = input.nextInt();
             input.nextLine();
-
             int nominal = 0;
-            switch (pilihNominal) {
+            switch (pilihNominal){
                 case 1:
                     nominal = 50000;
                     break;
@@ -59,14 +56,13 @@ public class TarikTunaiPage {
                     System.out.println("Pilihan Tidak Valid !");
                     break;
             }
-
-            if (pilihNominal != 0) {
-                boolean status = Bank.tarikTunai(Authentication.getUserLogged(), new TarikTunai(nominal));
-
-                if (status) {
-                    System.out.println("Berhasil Tarik Tunai sebesar Rp." + Uang.format(nominal));
-                } else {
-                    System.out.println("Entity.Saldo Entity.Rekening Anda Tidak Cukup !");
+            if (pilihNominal != 0){
+                boolean status = Bank.tarikTunai(Modelling.getuserMasuk(), new TarikTunai(nominal));
+                if (status){
+                    System.out.println("Berhasil Tarik Tunai sebesar Rp." +Keuangan.format(nominal));
+                }
+                else{
+                    System.out.println("Saldo Rekening Anda Tidak Mencukupi!");
                 }
             }
         }

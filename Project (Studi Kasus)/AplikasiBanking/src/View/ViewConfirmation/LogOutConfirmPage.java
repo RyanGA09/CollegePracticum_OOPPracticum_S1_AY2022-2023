@@ -1,6 +1,6 @@
 package View.ViewConfirmation;
 
-import Model.Authentication;
+import Controller.Authentication;
 
 import java.util.Scanner;
 

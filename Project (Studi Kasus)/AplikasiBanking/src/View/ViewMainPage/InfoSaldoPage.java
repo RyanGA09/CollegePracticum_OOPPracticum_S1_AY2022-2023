@@ -1,21 +1,19 @@
 package View.ViewMainPage;
 
-import Utils.Uang;
-import Model.Authentication;
+import Model.Modelling;
+import Utils.Keuangan;
 
-public class InfoSaldoPage {
+public class InfoSaldoPage{
 
     public InfoSaldoPage(){
         infoSaldo();
     }
 
-    private void infoSaldo() {
-        System.out.println("-------------- INFO SALDO -------------");
-
-        System.out.println("Entity.Saldo: ");
-        int saldo = Authentication.getUserLogged().getRekening().getSaldo();
-        System.out.println("Rp. " + Uang.format(saldo));
-
+    private void infoSaldo(){
+        System.out.println("----------- INFO SALDO ----------");
+        System.out.println("Saldo: ");
+        int saldo = Modelling.getuserMasuk().getRekening().getSaldo();
+        System.out.println("Rp. " + Keuangan.format(saldo));
         System.out.println("---------------------------------------");
     }
 }

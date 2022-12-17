@@ -1,42 +1,26 @@
-package Model;
+package Controller;
 
-import Entity.SetorTunai;
 import Entity.User;
+import Model.Modelling;
 import Utils.RandomNumberString;
 import Entity.Rekening;
-import Controller.Bank;
 import View.HomePage;
 import View.MainPage;
 
-public class Authentication {
-
-    static User userLogged = null;
-
-    public static void initialUser(){
-        User pengguna = new User("Test 1", "123456", "0811", "user1", "123");
-        Bank.tambahUser(pengguna, new Rekening("123456", "123"));
-        Bank.setorTunai(pengguna, new SetorTunai(1000000));
-        User pengguna2 = new User("Test 2", "654321", "08122", "user2", "321");
-        Bank.tambahUser(pengguna2, new Rekening("654321", "321"));
-    }
-
-    public static User getUserLogged() {
-        return userLogged;
-    }
+public class Authentication{
 
     public static void register(String namaLengkap,String nik,String noTelpon,String username,String kodeAkses,String pin){
         User userBaru = new User(namaLengkap, nik, noTelpon, username, kodeAkses);
-
         String noRekening = RandomNumberString.getNumeric(6);
         Rekening rekening = new Rekening(noRekening, pin);
         Bank.tambahUser(userBaru, rekening);
     }
 
     public static boolean login(String username, String kodeAkses){
-        if (Bank.getUserTerdaftar().size() != 0) {
+        if (Bank.getUserTerdaftar().size() != 0){
             for (User pengguna: Bank.getUserTerdaftar()){
                 if ((pengguna.getUsername().equals(username)) && (pengguna.getKodeAkses().equals(kodeAkses))) {
-                    userLogged = pengguna;
+                    Modelling.setUserMasuk(pengguna);
                     return true;
                 }
             }
@@ -44,13 +28,13 @@ public class Authentication {
         return false;
     }
 
-    public static boolean verifPin(String pin){
-        return userLogged.getRekening().getPin().equals(pin);
+    public static boolean verifikasiPin(String pin){
+        return Modelling.getuserMasuk().getRekening().getPin().equals(pin);
     }
 
     public static User cariRekening(String rekening){
-        for (User pengguna : Bank.getUserTerdaftar()) {
-            if (pengguna.getRekening().getNoRekening().equals(rekening)) {
+        for (User pengguna : Bank.getUserTerdaftar()){
+            if (pengguna.getRekening().getNoRekening().equals(rekening)){
                 return pengguna;
             }
         }
@@ -69,7 +53,7 @@ public class Authentication {
     public static void exit(char pilihan){
         if (pilihan == 'Y' || pilihan == 'y'){
             System.out.println("-----Keluar Aplikasi-----");
-            userLogged = null;
+//            Modelling.getuserMasuk() = null;
         }
         else if (pilihan == 'N' || pilihan == 'n'){
             new HomePage();

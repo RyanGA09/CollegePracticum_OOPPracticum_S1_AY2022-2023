@@ -1,26 +1,28 @@
 package Entity;
 
+import Entity.Mother.Transaksi;
+
 public class Transfer extends Transaksi {
 
-    private int nilaiNominal;
+    private int nilaiNominalTransfer;
     private User userAsal, userTujuan;
 
-    public Transfer(int nominal, User userAsal, User userTujuan) {
-        this.nilaiNominal = nominal;
-        this.userAsal = userAsal;
-        this.userTujuan = userTujuan;
+    public Transfer(int nominal, User asal, User tujuan){
+        this.nilaiNominalTransfer = nominal;
+        this.userAsal = asal;
+        this.userTujuan = tujuan;
     }
 
     @Override
-    public int getNilaiNominal() {
-        return nilaiNominal;
+    public int getNilaiNominal(){
+        return nilaiNominalTransfer;
     }
 
-    public User getUserAsal() {
+    public User getUserAsal(){
         return userAsal;
     }
 
-    public User getUserTujuan() {
+    public User getUserTujuan(){
         return userTujuan;
     }
 }

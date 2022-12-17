@@ -1,5 +1,8 @@
 package Entity;
 
+import Entity.Mother.Saldo;
+import Entity.Mother.Transaksi;
+
 import java.util.ArrayList;
 
 public class Rekening extends Saldo {

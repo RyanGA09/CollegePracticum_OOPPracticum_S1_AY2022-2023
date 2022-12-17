@@ -2,11 +2,11 @@ package View.ViewMainPage;
 
 import Controller.Bank;
 import Entity.SetorTunai;
-import Model.Authentication;
+import Model.Modelling;
 
 import java.util.Scanner;
 
-public class SetorTunaiPage {
+public class SetorTunaiPage{
 
     Scanner input = new Scanner(System.in);
 
@@ -14,18 +14,14 @@ public class SetorTunaiPage {
         setorTunai();
     }
 
-    private void setorTunai() {
-
-        System.out.println("------------- SETOR  SALDO ------------");
-
-        if (Bank.verifPin()) {
-            System.out.print("Masukan Nominal Entity.Saldo: Rp. ");
+    private void setorTunai(){
+        System.out.println("------------- SETOR SALDO ------------");
+        if (Bank.verifikasiPin()) {
+            System.out.print("Masukan Nominal Saldo: Rp. ");
             int nominal = input.nextInt();
             input.nextLine();
-
-            Bank.setorTunai(Authentication.getUserLogged(), new SetorTunai(nominal));
+            Bank.setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal));
         }
-
         System.out.println("---------------------------------------");
     }
 }

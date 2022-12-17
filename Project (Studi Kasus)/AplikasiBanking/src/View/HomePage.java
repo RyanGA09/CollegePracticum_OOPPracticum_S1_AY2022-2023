@@ -1,10 +1,12 @@
 package View;
 
 import View.ViewConfirmation.ExitConfirmPage;
+import View.ViewHomePage.LoginPage;
+import View.ViewHomePage.RegistrationPage;
 
 import java.util.Scanner;
 
-public class HomePage {
+public class HomePage{
 
     private Scanner input = new Scanner(System.in);
 
@@ -15,7 +17,7 @@ public class HomePage {
     private void initialPage(){
         System.out.println("------- BANKING -------");
         int menu;
-        do {
+        do{
             System.out.println("""
                     1. Login
                     2. Daftar Rekening

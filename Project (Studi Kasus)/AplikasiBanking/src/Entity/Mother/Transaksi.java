@@ -1,15 +1,15 @@
-package Entity;
+package Entity.Mother;
 import Utils.DateString;
 
-public abstract class Transaksi {
+public abstract class Transaksi{
 
     private String tanggalTransaksi;
 
-    public Transaksi() {
+    public Transaksi(){
         tanggalTransaksi = DateString.now();
     }
 
-    public String getTanggalTransaksi() {
+    public String getTanggalTransaksi(){
         return tanggalTransaksi;
     }
 

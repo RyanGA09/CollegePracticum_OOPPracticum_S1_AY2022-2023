@@ -1,15 +1,17 @@
 package Entity;
 
+import Entity.Mother.Transaksi;
+
 public class SetorTunai extends Transaksi {
 
-    private int nominalSetor;
+    private int nilaiNominalSetor;
 
-    public SetorTunai(int nominalSetor) {
-        this.nominalSetor = nominalSetor;
+    public SetorTunai(int nominalSetor){
+        this.nilaiNominalSetor = nominalSetor;
     }
 
     @Override
-    public int getNilaiNominal() {
-        return nominalSetor;
+    public int getNilaiNominal(){
+        return nilaiNominalSetor;
     }
 }

@@ -1,15 +1,17 @@
 package Entity;
 
+import Entity.Mother.Transaksi;
+
 public class TarikTunai extends Transaksi {
 
-    private int nominalTarik;
+    private int nilaiNominalTarik;
 
-    public TarikTunai(int nominalTarik) {
-        this.nominalTarik = nominalTarik;
+    public TarikTunai(int nominalTarik){
+        this.nilaiNominalTarik = nominalTarik;
     }
 
     @Override
-    public int getNilaiNominal() {
-        return nominalTarik;
+    public int getNilaiNominal(){
+        return nilaiNominalTarik;
     }
 }

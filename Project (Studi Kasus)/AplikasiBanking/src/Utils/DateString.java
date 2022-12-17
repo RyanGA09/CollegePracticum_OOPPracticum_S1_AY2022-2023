@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class DateString {
-
     public static String now() {
         Locale locale = Locale.forLanguageTag("id");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy H:m:s", locale);
