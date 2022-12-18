@@ -3,30 +3,11 @@ package Controller;
 import Entity.Mother.Transaksi;
 import Entity.Transfer;
 import Entity.User;
-import Entity.Rekening;
+import Model.Modelling;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Bank{
-
-    private static ArrayList<User> userTerdaftar = new ArrayList<>();
-
-    public static ArrayList<User> getUserTerdaftar(){
-        return userTerdaftar;
-    }
-
-    public static void tambahUser(User akunBaru, Rekening rekening){
-        if(userTerdaftar.size() != 0){
-            for (User pengguna: userTerdaftar){
-                if ((pengguna.getNik().equals(akunBaru.getNik())) || (pengguna.getNoTelpon().equals(akunBaru.getNoTelpon()))){
-                    return;
-                }
-            }
-        }
-        akunBaru.buatRekening(rekening);
-        userTerdaftar.add(akunBaru);
-    }
 
 
     public static void setorTunai(User pengguna, Transaksi transaksi){
@@ -46,9 +27,8 @@ public class Bank{
         Transfer transfer = (Transfer) transaksi;
         User userAsal = transfer.getUserAsal();
         User userTujuan = transfer.getUserTujuan();
-        for (User akunTujuan : userTerdaftar){
-            if (akunTujuan.getUsername().equals(userTujuan.getUsername())){
-//            if (akunTujuan.getUsername() == userTujuan.getUsername()){
+        for (User akunTujuan : Authentication.getUserTerdaftar()){
+            if (akunTujuan.getEmail().equals(userTujuan.getEmail())){
                 userTujuan.getRekening().tambahTransaksi(transfer);
                 userTujuan.getRekening().tambahSaldo(transfer.getNilaiNominal());
                 userAsal.getRekening().tambahTransaksi(transfer);
@@ -66,7 +46,7 @@ public class Bank{
             percobaan -= 1;
             System.out.print("Masukan PIN: ");
             String pin = input.nextLine();
-            boolean status = Authentication.verifikasiPin(pin);
+            boolean status = Modelling.verifikasiPin(pin);
             if (!status) {
                 if (percobaan == 0){
                     System.out.println("Anda Salah memasukan PIN sebanyak 3x");

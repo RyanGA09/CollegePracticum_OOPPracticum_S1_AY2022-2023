@@ -59,7 +59,7 @@ public class TarikTunaiPage{
             if (pilihNominal != 0){
                 boolean status = Bank.tarikTunai(Modelling.getuserMasuk(), new TarikTunai(nominal));
                 if (status){
-                    System.out.println("Berhasil Tarik Tunai sebesar Rp." +Keuangan.format(nominal));
+                    System.out.println("Berhasil Tarik Tunai sebesar Rp."+Keuangan.format(nominal));
                 }
                 else{
                     System.out.println("Saldo Rekening Anda Tidak Mencukupi!");

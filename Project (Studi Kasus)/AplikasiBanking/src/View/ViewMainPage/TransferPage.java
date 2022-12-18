@@ -23,7 +23,6 @@ public class TransferPage{
         String noRekeningTujuan = input.nextLine();
         User userTujuan = Authentication.cariRekening(noRekeningTujuan);
         if (userTujuan != null){
-//            if (userTujuan.getUsername() != Modelling.getuserMasuk().getUsername()){
               if(!userTujuan.getUsername().equals(Modelling.getuserMasuk().getUsername())){
                 System.out.print("Masukan Nominal Transfer  : ");
                 int nominal = input.nextInt();
@@ -31,8 +30,8 @@ public class TransferPage{
                 if (nominal < Modelling.getuserMasuk().getRekening().getSaldo()){
                     System.out.println("---------------------------------------");
                     System.out.println("Transfer Ke");
-                    System.out.println("No Rekening : " + userTujuan.getRekening().getNoRekening());
-                    System.out.println("Atas Nama   : " + userTujuan.getFullname());
+                    System.out.println("No Rekening : "+userTujuan.getRekening().getNoRekening());
+                    System.out.println("Atas Nama   : "+userTujuan.getFullname());
                     System.out.println("Nominal Sebesar");
                     System.out.println("Rp. " + Keuangan.format(nominal));
                     System.out.println("---------------------------------------");
@@ -42,7 +41,7 @@ public class TransferPage{
                         if (Bank.verifikasiPin()){
                             boolean status = Bank.transfer(new Transfer(nominal, Modelling.getuserMasuk(), userTujuan));
                             if (status){
-                                System.out.println("Berhasil ");
+                                System.out.println("Berhasil transfer sebesar Rp."+Keuangan.format(nominal));
                             }
                         }
                         else{

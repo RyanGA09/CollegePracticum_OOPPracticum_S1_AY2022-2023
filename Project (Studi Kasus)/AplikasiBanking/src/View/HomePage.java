@@ -19,27 +19,32 @@ public class HomePage{
         int menu;
         do{
             System.out.println("""
-                    1. Login
-                    2. Daftar Rekening
-                    3. Keluar
-                    """);
+                    1. Daftar Rekening
+                    2. Login
+                    0. Keluar
+                    =======================""");
             System.out.print("Pilih menu: ");
             menu = input.nextInt();
             input.nextLine();
             switchMenu(menu);
-        }while (menu != 3);
+            System.out.println("================================");
+        }while (menu != 0);
     }
 
     private void switchMenu(int menu){
         switch (menu){
             case 1:
-                new LoginPage();
+                new RegistrationPage();
                 break;
             case 2:
-                new RegistrationPage();
+                new LoginPage();
                 break;
             case 3:
                 new ExitConfirmPage().exitConfirm();
+                break;
+            default:
+                System.out.println("Menu tidak valid");
+                break;
         }
     }
 }

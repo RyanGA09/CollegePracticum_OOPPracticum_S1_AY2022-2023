@@ -18,21 +18,20 @@ public class MainPage{
         System.out.println("=======================================");
         int menu;
         do {
-            System.out.print("""
+            System.out.println("""
                     1. Info Saldo
                     2. Setor Tunai
                     3. Tarik Tunai
                     4. Transfer
                     5. Mutasi Rekening
-                    6. Info Akun
+                    6. Edit Akun
+                    7. Info Akun
                     0. Logout
-                    """);
+                    ==========================""");
             System.out.print("Pilih Menu: ");
             menu = input.nextInt();
             input.nextLine();
-
             System.out.println();
-
             switchMenu(menu);
         } while (menu != 0);
     }
@@ -55,6 +54,9 @@ public class MainPage{
                new MutasiRekeningPage();
                 break;
             case 6:
+                new EditAkun();
+                break;
+            case 7:
                 new InfoAkunPage();
                 break;
             case 0:
