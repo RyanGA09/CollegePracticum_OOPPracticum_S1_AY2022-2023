@@ -1,5 +1,5 @@
-import Model.Modelling;
-import View.HomePage;
+import model.Modelling;
+import view.HomePage;
 
 public class Aplikasi{
     public static void main(String[] args){
