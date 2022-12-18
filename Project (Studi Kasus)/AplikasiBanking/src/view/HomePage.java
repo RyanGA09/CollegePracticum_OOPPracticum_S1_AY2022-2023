@@ -45,7 +45,9 @@ public class HomePage{
                 new ExitConfirmPage().exitConfirm();
                 break;
             default:
+                System.out.println("================================");
                 System.out.println("Menu tidak valid");
+                System.out.println("================================");
                 break;
         }
     }
