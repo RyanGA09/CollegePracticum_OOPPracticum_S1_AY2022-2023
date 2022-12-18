@@ -1,7 +1,7 @@
 package view.viewhomepage;
 
 import controller.Authentication;
-import view.MainPage;
+import view.MainMenuPage;
 
 import java.util.Scanner;
 public class LoginPage{
@@ -32,7 +32,7 @@ public class LoginPage{
                     System.out.println("Login Berhasil.");
                     System.out.println("---------------");
                     System.out.println();
-                    new MainPage();
+                    new MainMenuPage();
                     break;
                 }
                 else{

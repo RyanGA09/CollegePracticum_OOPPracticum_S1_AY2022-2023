@@ -27,19 +27,21 @@ public class HomePage{
             menu = input.nextInt();
             input.nextLine();
             switchMenu(menu);
-            System.out.println("================================");
         }while (menu != 0);
     }
 
     private void switchMenu(int menu){
         switch (menu){
             case 1:
+                System.out.println("================================");
                 new RegistrationPage();
                 break;
             case 2:
+                System.out.println("================================");
                 new LoginPage();
                 break;
-            case 3:
+            case 0:
+                System.out.println("================================");
                 new ExitConfirmPage().exitConfirm();
                 break;
             default:

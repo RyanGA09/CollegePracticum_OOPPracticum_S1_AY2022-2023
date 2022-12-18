@@ -4,7 +4,7 @@ import entity.User;
 import model.Modelling;
 import entity.Rekening;
 import view.HomePage;
-import view.MainPage;
+import view.MainMenuPage;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class Authentication{
                 userTerdaftar.get(perulangan).setEmail(emailBaru);
             }
         }
-        new MainPage();
+        new MainMenuPage();
     }
     public static void editNoTelpon(String noTelpon, String noTelponBaru){
         for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
@@ -30,7 +30,7 @@ public class Authentication{
                 userTerdaftar.get(perulangan).setNoTelpon(noTelponBaru);
             }
         }
-        new MainPage();
+        new MainMenuPage();
     }
 
     public static void editUsername(String username, String usernameBaru){
@@ -39,7 +39,7 @@ public class Authentication{
                 userTerdaftar.get(perulangan).setUsername(usernameBaru);
             }
         }
-        new MainPage();
+        new MainMenuPage();
     }
 
     public static void editPassword(String pass, String passBaru){
@@ -48,7 +48,7 @@ public class Authentication{
                 userTerdaftar.get(perulangan).setUsername(passBaru);
             }
         }
-        new MainPage();
+        new MainMenuPage();
     }
 
     public static void tambahUser(User akunBaru, Rekening rekening){
@@ -86,18 +86,23 @@ public class Authentication{
 
     public static void logOut(char pilihan){
         if (pilihan == 'y' || pilihan == 'Y'){
+            System.out.println("================================");
             new HomePage();
         }
         else if (pilihan == 'n' || pilihan == 'N'){
-            new MainPage();
+            System.out.println("================================");
+            new MainMenuPage();
         }
     }
 
     public static void exit(char pilihan){
         if (pilihan == 'Y' || pilihan == 'y'){
+            System.out.println("================================");
             System.out.println("-----Keluar Aplikasi-----");
+            System.out.println("Terima kasih Kunjungannya");
         }
         else if (pilihan == 'N' || pilihan == 'n'){
+            System.out.println("================================");
             new HomePage();
         }
     }

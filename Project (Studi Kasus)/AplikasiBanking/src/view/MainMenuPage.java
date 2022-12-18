@@ -4,18 +4,18 @@ import view.viewmainpage.*;
 import view.viewconfirmation.LogOutConfirmPage;
 
 import java.util.Scanner;
-public class MainPage{
+public class MainMenuPage {
 
     private Scanner input = new Scanner(System.in);
 
-    public MainPage(){
+    public MainMenuPage(){
         initialPage();
     }
 
     private void initialPage() {
-        System.out.println("=======================================");
-        System.out.println("--------------- BANKING ---------------");
-        System.out.println("=======================================");
+        System.out.println("=========================================");
+        System.out.println("--------------- MAIN MENU ---------------");
+        System.out.println("=========================================");
         int menu;
         do {
             System.out.println("""

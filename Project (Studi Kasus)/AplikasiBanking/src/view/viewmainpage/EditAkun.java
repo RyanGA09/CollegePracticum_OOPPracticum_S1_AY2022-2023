@@ -1,6 +1,6 @@
 package view.viewmainpage;
 
-import view.MainPage;
+import view.MainMenuPage;
 import view.viewmainpage.viewedit.EditAkunEmail;
 import view.viewmainpage.viewedit.EditNoTelpon;
 import view.viewmainpage.viewedit.EditPassword;
@@ -47,7 +47,7 @@ public class EditAkun {
                 new EditPassword().editPass();
                 break;
             case 5:
-                new MainPage();
+                new MainMenuPage();
             default:
                 System.out.println("Menu tidak valid");;
                 break;
