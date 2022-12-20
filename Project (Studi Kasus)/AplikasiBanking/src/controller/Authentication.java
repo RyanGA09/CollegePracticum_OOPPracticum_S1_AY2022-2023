@@ -83,27 +83,4 @@ public class Authentication{
         }
         return null;
     }
-
-    public static void logOut(char pilihan){
-        if (pilihan == 'y' || pilihan == 'Y'){
-            System.out.println("================================");
-            new HomePage();
-        }
-        else if (pilihan == 'n' || pilihan == 'N'){
-            System.out.println("================================");
-            new MainMenuPage();
-        }
-    }
-
-    public static void exit(char pilihan){
-        if (pilihan == 'Y' || pilihan == 'y'){
-            System.out.println("================================");
-            System.out.println("-----Keluar Aplikasi-----");
-            System.out.println("Terima kasih Kunjungannya");
-        }
-        else if (pilihan == 'N' || pilihan == 'n'){
-            System.out.println("================================");
-            new HomePage();
-        }
-    }
 }
