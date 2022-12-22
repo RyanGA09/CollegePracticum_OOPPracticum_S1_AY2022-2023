@@ -9,11 +9,11 @@ public class EditAkunEmail {
     Scanner input = new Scanner(System.in);
 
     public void editEmail(){
-        String email, emailNew;
-        System.out.print("Nomor Telpon lama: ");
-        email = input.nextLine();
-        System.out.print("Masukkan Nomor Telpon baru : ");
+        String emailNew;
+//        System.out.print("Nomor Telpon lama: ");
+//        email = input.nextLine();
+        System.out.print("Masukkan Nama email baru : ");
         emailNew = input.nextLine();
-        Authentication.editEmail(email, emailNew);
+        Authentication.editEmail(emailNew);
     }
 }

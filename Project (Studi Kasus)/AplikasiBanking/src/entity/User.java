@@ -14,11 +14,11 @@ public class User{
         kodeAkses = kode;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email){
         this.email = email;
     }
 
-    public String getEmail() {
+    public String getEmail(){
         return email;
     }
 
@@ -30,7 +30,7 @@ public class User{
         return nik;
     }
 
-    public void setNoTelpon(String noTelpon) {
+    public void setNoTelpon(String noTelpon){
         this.noTelpon = noTelpon;
     }
 
@@ -38,12 +38,16 @@ public class User{
         return noTelpon;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(String username){
         this.username = username;
     }
 
     public String getUsername(){
         return username;
+    }
+
+    public void setKodeAkses(String kodeAkses) {
+        this.kodeAkses = kodeAkses;
     }
 
     public String getKodeAkses(){

@@ -9,11 +9,11 @@ public class EditUsername {
     Scanner input = new Scanner(System.in);
 
     public void editUser(){
-        String username, usernameNew;
-        System.out.print("Username lama: ");
-        username = input.nextLine();
+        String usernameNew;
+//        System.out.print("Username lama: ");
+//        username = input.nextLine();
         System.out.print("Masukkan Username baru : ");
         usernameNew = input.nextLine();
-        Authentication.editUsername(username, usernameNew);
+        Authentication.editUsername(usernameNew);
     }
 }

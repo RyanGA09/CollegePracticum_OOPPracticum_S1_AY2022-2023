@@ -9,11 +9,11 @@ public class EditPassword {
     Scanner input = new Scanner(System.in);
 
     public void editPass(){
-        String pass, passbaru;
-        System.out.print("Username lama: ");
-        pass = input.nextLine();
-        System.out.print("Masukkan Username baru : ");
+        String passbaru;
+//        System.out.print("Kode Akses lama: ");
+//        pass = input.nextLine();
+        System.out.print("Masukkan kode akses baru : ");
         passbaru = input.nextLine();
-        Authentication.editPassword(pass, passbaru);
+        Authentication.editKodeAkses(passbaru);
     }
 }

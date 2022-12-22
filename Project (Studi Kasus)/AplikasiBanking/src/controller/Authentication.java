@@ -3,7 +3,7 @@ package controller;
 import entity.User;
 import model.Modelling;
 import entity.Rekening;
-import view.HomePage;
+//import view.HomePage;
 import view.MainMenuPage;
 
 import java.util.ArrayList;
@@ -16,38 +16,42 @@ public class Authentication{
         return userTerdaftar;
     }
 
-    public static void editEmail(String email, String emailBaru){
-        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
-            if (userTerdaftar.get(perulangan).getEmail().equals(email)) {
-                userTerdaftar.get(perulangan).setEmail(emailBaru);
-            }
-        }
+    public static void editEmail(/*String email,*/ String emailBaru){
+//        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
+//            if (userTerdaftar.get(perulangan).getEmail().equals(email)) {
+//                userTerdaftar.get(perulangan).setEmail(emailBaru);
+//            }
+//        }
+        Modelling.getuserMasuk().setEmail(emailBaru);
         new MainMenuPage();
     }
-    public static void editNoTelpon(String noTelpon, String noTelponBaru){
-        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
-            if (userTerdaftar.get(perulangan).getNoTelpon().equals(noTelpon)) {
-                userTerdaftar.get(perulangan).setNoTelpon(noTelponBaru);
-            }
-        }
-        new MainMenuPage();
-    }
-
-    public static void editUsername(String username, String usernameBaru){
-        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
-            if (userTerdaftar.get(perulangan).getUsername().equals(username)) {
-                userTerdaftar.get(perulangan).setUsername(usernameBaru);
-            }
-        }
+    public static void editNoTelpon(/*String noTelpon,*/ String noTelponBaru){
+//        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
+//            if (userTerdaftar.get(perulangan).getNoTelpon().equals(noTelpon)) {
+//                userTerdaftar.get(perulangan).setNoTelpon(noTelponBaru);
+//            }
+//        }
+        Modelling.getuserMasuk().setNoTelpon(noTelponBaru);
         new MainMenuPage();
     }
 
-    public static void editPassword(String pass, String passBaru){
-        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
-            if (userTerdaftar.get(perulangan).getUsername().equals(pass)) {
-                userTerdaftar.get(perulangan).setUsername(passBaru);
-            }
-        }
+    public static void editUsername(/*String username,*/ String usernameBaru){
+//        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
+//            if (userTerdaftar.get(perulangan).getUsername().equals(username)) {
+//                userTerdaftar.get(perulangan).setUsername(usernameBaru);
+//            }
+//        }
+        Modelling.getuserMasuk().setUsername(usernameBaru);
+        new MainMenuPage();
+    }
+
+    public static void editKodeAkses(/*String pass,*/ String passBaru){
+//        for (int perulangan = 0; perulangan < userTerdaftar.size(); perulangan++) {
+//            if (userTerdaftar.get(perulangan).getUsername().equals(pass)) {
+//                userTerdaftar.get(perulangan).setUsername(passBaru);
+//            }
+//        }
+        Modelling.getuserMasuk().setKodeAkses(passBaru);
         new MainMenuPage();
     }
 
