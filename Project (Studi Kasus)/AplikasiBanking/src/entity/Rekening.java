@@ -1,7 +1,7 @@
 package entity;
 
 import entity.Mother.Saldo;
-import entity.Mother.Transaksi;
+import entity.abstraction.Transaksi;
 
 import java.util.ArrayList;
 

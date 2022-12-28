@@ -8,6 +8,6 @@ public class Himalaya extends Kucing {
     }
 
     public void kucing(){
-        System.out.println("Ini adalah kucing berjenis Himalaya yang bernama "+nama+" dengan kaki "+kaki2+", kuku "+cakar1+", dan ekor "+ekor1);
+        System.out.print("Ini adalah kucing berjenis Himalaya yang bernama "+nama);
     }
 }

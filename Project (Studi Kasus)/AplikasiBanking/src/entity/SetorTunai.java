@@ -1,6 +1,6 @@
 package entity;
 
-import entity.Mother.Transaksi;
+import entity.abstraction.Transaksi;
 
 public class SetorTunai extends Transaksi {
 

@@ -1,6 +1,6 @@
 package controller;
 
-import entity.Mother.Transaksi;
+import entity.abstraction.Transaksi;
 import entity.Transfer;
 import entity.User;
 import model.Modelling;
