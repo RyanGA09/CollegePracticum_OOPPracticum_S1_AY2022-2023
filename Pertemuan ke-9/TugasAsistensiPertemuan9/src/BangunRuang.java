@@ -1,5 +1,3 @@
-package abstraction;
-
 public class BangunRuang implements Formula {
 
     @Override

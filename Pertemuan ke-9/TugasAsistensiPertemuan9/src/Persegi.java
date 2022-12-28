@@ -1,5 +1,3 @@
-import abstraction.BangunDatar;
-
 public class Persegi extends BangunDatar {
     private double sisi;
 

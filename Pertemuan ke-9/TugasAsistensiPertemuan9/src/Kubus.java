@@ -1,5 +1,3 @@
-import abstraction.BangunRuang;
-
 public class Kubus extends BangunRuang {
     double sisi;
 

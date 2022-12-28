@@ -1,5 +1,3 @@
-package abstraction;
-
 public interface Formula {
 
     double luas(double sisi);
