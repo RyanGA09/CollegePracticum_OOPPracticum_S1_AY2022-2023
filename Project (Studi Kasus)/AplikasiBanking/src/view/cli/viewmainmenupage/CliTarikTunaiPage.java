@@ -4,6 +4,7 @@ import controller.Bank;
 import entity.TarikTunai;
 import model.Modelling;
 import utils.Keuangan;
+import view.cli.viewconfirmation.CliVerifikasiPin;
 
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class CliTarikTunaiPage {
 
     private void tarikTunai(){
         System.out.println("------------ TARIK SALDO -----------");
-        if (Bank.verifikasiPin()){
+        if (new CliVerifikasiPin().pinVerif()){
             System.out.println("""
                     Masukan Nominal Entity.Saldo:
                     1. Rp. 50.000

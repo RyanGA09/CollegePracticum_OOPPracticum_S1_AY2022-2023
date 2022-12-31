@@ -6,6 +6,7 @@ import entity.User;
 import controller.Authentication;
 import model.Modelling;
 import utils.Keuangan;
+import view.cli.viewconfirmation.CliVerifikasiPin;
 
 import java.util.Scanner;
 
@@ -38,7 +39,7 @@ public class CliTransferPage {
                     System.out.print("Transfer (Y/y atau N/n) : ");
                     char konfirmasi = input.nextLine().charAt(0);
                     if (konfirmasi == 'Y' || konfirmasi == 'y'){
-                        if (Bank.verifikasiPin()){
+                        if (new CliVerifikasiPin().pinVerif()){
                             boolean status = Bank.transfer(new Transfer(nominal, Modelling.getuserMasuk(), userTujuan));
                             if (status){
                                 System.out.println("Berhasil transfer sebesar Rp."+Keuangan.format(nominal));

@@ -39,27 +39,14 @@ public class Bank{
         return false;
     }
 
-    public static boolean verifikasiPin(){
-        Scanner input = new Scanner(System.in);
-        int percobaan = 3;
-        do {
-            percobaan -= 1;
-            System.out.print("Masukan PIN: ");
-            String pin = input.nextLine();
-            boolean status = Modelling.verifikasiPin(pin);
-            if (!status) {
-                if (percobaan == 0){
-                    System.out.println("Anda Salah memasukan PIN sebanyak 3x");
-                    return false;
-                }
-                else{
-                    System.out.println("PIN Salah !");
+    public static boolean pinVerif(String pin){
+        if(Authentication.getUserTerdaftar().size() != 0){
+            for(User pengguna: Authentication.getUserTerdaftar()){
+                if(pengguna.getRekening().getPin().equals(pin)){
+                    Modelling.verifikasiPin(pin);
                 }
             }
-            else{
-                return true;
-            }
-        } while (percobaan != 0);
-        return false;
+        }
+        return true;
     }
 }

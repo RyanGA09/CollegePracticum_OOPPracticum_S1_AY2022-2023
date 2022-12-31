@@ -3,7 +3,9 @@ package view.cli.viewmainmenupage;
 import controller.Bank;
 import entity.SetorTunai;
 import model.Modelling;
+import view.cli.viewconfirmation.CliVerifikasiPin;
 
+import javax.swing.text.View;
 import java.util.Scanner;
 
 public class CliSetorTunaiPage {
@@ -16,7 +18,7 @@ public class CliSetorTunaiPage {
 
     private void setorTunai(){
         System.out.println("------------- SETOR SALDO ------------");
-        if (Bank.verifikasiPin()) {
+        if (CliVerifikasiPin.pinVerif()) {
             System.out.print("Masukan Nominal Saldo: Rp. ");
             int nominal = input.nextInt();
             input.nextLine();
