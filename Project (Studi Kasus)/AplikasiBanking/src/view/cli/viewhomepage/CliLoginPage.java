@@ -37,13 +37,16 @@ public class CliLoginPage {
                 }
                 else{
                     loginGagal();
+                    break;
                 }
             }
             else if (pilihan == 'n' || pilihan == 'N'){
                 new CliRegistrationPage();
+                break;
             }
             else{
                 new CliLoginPage();
+                break;
             }
         }
     }

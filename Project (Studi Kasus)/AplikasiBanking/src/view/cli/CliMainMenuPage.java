@@ -60,7 +60,7 @@ public class CliMainMenuPage {
                 new CliInfoAkunPage();
                 break;
             case 0:
-                new CliLogOutConfirmPage().logOutConfirm();
+                new CliLogOutConfirmPage();
                 break;
             default:
                 System.out.println("Menu Tidak valid !");

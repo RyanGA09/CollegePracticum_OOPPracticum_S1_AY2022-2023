@@ -34,7 +34,7 @@ public class CliTransferPage {
                     System.out.println("No Rekening : "+userTujuan.getRekening().getNoRekening());
                     System.out.println("Atas Nama   : "+userTujuan.getFullname());
                     System.out.println("Nominal Sebesar");
-                    System.out.println("Rp. " + Keuangan.format(nominal));
+                    System.out.println("Rp. " +Keuangan.format(nominal));
                     System.out.println("---------------------------------------");
                     System.out.print("Transfer (Y/y atau N/n) : ");
                     char konfirmasi = input.nextLine().charAt(0);
@@ -56,7 +56,6 @@ public class CliTransferPage {
                 else{
                     System.out.println("Saldo Tidak Cukup !");
                 }
-
             }
             else{
                 System.out.println("Tidak dapat Transfer ke Rekening Sendiri !");

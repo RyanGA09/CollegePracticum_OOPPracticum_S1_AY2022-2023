@@ -1,6 +1,7 @@
 package view.cli.viewmainmenupage.viewedit;
 
 import controller.Authentication;
+import view.cli.CliMainMenuPage;
 
 import java.util.Scanner;
 
@@ -15,5 +16,6 @@ public class EditUsernamePage {
         System.out.print("Masukkan Username baru : ");
         usernameNew = input.nextLine();
         Authentication.editUsername(usernameNew);
+        new CliMainMenuPage();
     }
 }

@@ -2,6 +2,7 @@ package view.cli.viewmainmenupage;
 
 import controller.Bank;
 import entity.SetorTunai;
+import entity.abstraction.Transaksi;
 import model.Modelling;
 import view.cli.viewconfirmation.CliVerifikasiPin;
 
@@ -22,7 +23,7 @@ public class CliSetorTunaiPage {
             System.out.print("Masukan Nominal Saldo: Rp. ");
             int nominal = input.nextInt();
             input.nextLine();
-            Bank.setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal));
+            Bank.setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
         }
         System.out.println("---------------------------------------");
     }

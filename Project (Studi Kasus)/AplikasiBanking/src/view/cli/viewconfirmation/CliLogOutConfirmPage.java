@@ -9,9 +9,12 @@ public class CliLogOutConfirmPage {
 
     Scanner input = new Scanner(System.in);
 
-    char pilihan;
+    public CliLogOutConfirmPage(){
+        logOutConfirm();
+    }
 
-    public void logOutConfirm(){
+    private void logOutConfirm(){
+        char pilihan;
         System.out.println("Apakah anda benar - benar ingin logout?");
         System.out.print("Y/y atau N/n: ");
         pilihan = input.next().charAt(0);

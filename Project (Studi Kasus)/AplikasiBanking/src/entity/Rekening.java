@@ -20,6 +20,10 @@ public class Rekening extends Saldo {
         return nomorRekening;
     }
 
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
     public String getPin() {
         return pin;
     }

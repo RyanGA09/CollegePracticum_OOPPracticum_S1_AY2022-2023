@@ -42,7 +42,7 @@ public class CliHomePage {
                 break;
             case 0:
                 System.out.println("================================");
-                new CliExitConfirmPage().exitConfirm();
+                new CliExitConfirmPage();
                 break;
             default:
                 System.out.println("================================");

@@ -15,10 +15,12 @@ import java.io.IOException;
 import java.io.File;
 
 public abstract class GuiMainUnitFrame extends JFrame {
-    protected Color background = Color.decode("#336644");
+    protected Color background = Color.decode("#F5F5F5");
+    Color primaryColor = Color.decode("#336644");
+    Color secondaryColor = Color.decode("#D9D9D9");
 
     protected String defaultFontName = "Times New Roman";
-//    protected int defaultFontSize = 45;
+    protected int defaultFontSize = 45;
 
     public GuiMainUnitFrame(String title){
         setTitle(title);

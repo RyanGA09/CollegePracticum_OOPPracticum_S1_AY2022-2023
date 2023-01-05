@@ -1,6 +1,7 @@
 package view.cli.viewmainmenupage.viewedit;
 
 import controller.Authentication;
+import view.cli.CliMainMenuPage;
 
 import java.util.Scanner;
 
@@ -15,5 +16,6 @@ public class EditPasswordPage {
         System.out.print("Masukkan kode akses baru : ");
         passbaru = input.nextLine();
         Authentication.editKodeAkses(passbaru);
+        new CliMainMenuPage();
     }
 }

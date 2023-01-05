@@ -58,7 +58,7 @@ public class CliTarikTunaiPage {
                     break;
             }
             if (pilihNominal != 0){
-                boolean status = Bank.tarikTunai(Modelling.getuserMasuk(), new TarikTunai(nominal));
+                boolean status = Bank.tarikTunai(Modelling.getuserMasuk(), new TarikTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
                 if (status){
                     System.out.println("Berhasil Tarik Tunai sebesar Rp."+Keuangan.format(nominal));
                 }

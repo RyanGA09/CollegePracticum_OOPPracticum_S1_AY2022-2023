@@ -1,6 +1,7 @@
 package view.cli.viewmainmenupage.viewedit;
 
 import controller.Authentication;
+import view.cli.CliMainMenuPage;
 
 import java.util.Scanner;
 
@@ -15,5 +16,6 @@ public class EditAkunEmailPage {
         System.out.print("Masukkan Nama email baru : ");
         emailNew = input.nextLine();
         Authentication.editEmail(emailNew);
+        new CliMainMenuPage();
     }
 }

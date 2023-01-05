@@ -1,6 +1,7 @@
 package view.cli.viewmainmenupage.viewedit;
 
 import controller.Authentication;
+import view.cli.CliMainMenuPage;
 
 import java.util.Scanner;
 
@@ -15,5 +16,6 @@ public class EditNoTelponPage {
         System.out.print("Masukkan Nomor Telpon baru : ");
         telponNew = input.nextLine();
         Authentication.editNoTelpon(telponNew);
+        new CliMainMenuPage();
     }
 }

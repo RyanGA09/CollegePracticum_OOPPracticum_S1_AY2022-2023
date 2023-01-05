@@ -1,13 +1,21 @@
 package view.frame;
 
+import model.Modelling;
+import view.frame.viewconfirmation.GuiLogOutConfirmFrame;
+import view.frame.viewmainmenuframe.*;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class GuiMainMenuFrame extends GuiMainUnitFrame {
 
-    private JLabel icon, titleLabel;
+    private JLabel welcomeLabel;
+    private JLabel noRekLabel/*, setorLabel, tariklabel, transferlabel, saldoLabel, akunLabel, mutasiLabel*/;
 
-    private JButton transferButton, tarikButton, akunButton, saldoButton, mutasiButton, setorButton, logoutButton, editButton;
+    private JRadioButton showHideRadio;
+
+
+    private JButton transferButton, tarikButton, akunButton, saldoButton, mutasiButton, setorButton, logoutButton/*, editButton*/;
 
     public GuiMainMenuFrame(){
         super("MAIN MENU");
@@ -15,49 +23,67 @@ public class GuiMainMenuFrame extends GuiMainUnitFrame {
 
     @Override
     protected void component() {
-        titleLabel = new JLabel("MAIN MENU");
+        JLabel titleLabel = new JLabel("MAIN MENU");
         setFontSize(titleLabel, 30);
         setFontStyle(titleLabel, Font.BOLD);
         boundedAdd(titleLabel, 265, 35, 246, 100);
 
         ImageIcon image = loadImage("src/Assets/Logo.png", 200, 200);
-        icon = new JLabel(image);
+        JLabel icon = new JLabel(image);
         boundedAdd(icon, 200, 136, 200, 200);
         /*=======================================================*/
-        setorButton = new JButton("PENYETORAN TUNAI");
+        welcomeLabel = new JLabel();
+        setFontSize(welcomeLabel, 15);
+        boundedAdd(welcomeLabel, 50, 100, 125, 45);
+
+        noRekLabel = new JLabel();
+        setFontSize(noRekLabel, 15);
+        boundedAdd(noRekLabel, 50,135, 100, 20);
+
+        showHideRadio = new JRadioButton("Show");
+        setFontSize(showHideRadio, 10);
+        boundedAdd(showHideRadio, 50, 155, 50, 20);
+        /*=======================================================*/
+        ImageIcon setor = loadImage("src/Assets/Setor.jpg", 35, 35);
+        setorButton = new JButton("PENYETORAN TUNAI", setor);
         setFontSize(setorButton, 10);
         setFontStyle(setorButton, Font.BOLD);
-        boundedAdd(setorButton, 85, 360, 100, 50);
+        boundedAdd(setorButton, 85, 360, 120, 50);
 
-        tarikButton = new JButton("PENARIKAN TUNAI");
+        ImageIcon tarik = loadImage("src/Assets/Tarik.jpg", 35, 35);
+        tarikButton = new JButton("PENARIKAN TUNAI", tarik);
         setFontSize(tarikButton, 10);
         setFontStyle(tarikButton, Font.BOLD);
-        boundedAdd(tarikButton, 465, 360, 100, 50);
+        boundedAdd(tarikButton, 435, 360, 120, 50);
         /*=======================================================*/
-        saldoButton = new JButton("INFO SALDO");
+        ImageIcon saldo = loadImage("src/Assets/InfoSaldo.jpg", 35, 35);
+        saldoButton = new JButton("INFO SALDO", saldo);
         setFontSize(saldoButton, 10);
         setFontStyle(saldoButton, Font.BOLD);
-        boundedAdd(saldoButton, 85, 440, 100, 50);
+        boundedAdd(saldoButton, 85, 440,  120, 50);
 
-        mutasiButton = new JButton("MUTASI TRANSAKSI");
-        setFontSize(mutasiButton, 10);
-        setFontStyle(mutasiButton, Font.BOLD);
-        boundedAdd(mutasiButton, 275, 440, 100, 50);
+//        mutasiButton = new JButton("MUTASI TRANSAKSI");
+//        setFontSize(mutasiButton, 10);
+//        setFontStyle(mutasiButton, Font.BOLD);
+//        boundedAdd(mutasiButton, 275, 440, 100, 50);
 
-        transferButton = new JButton("TRANSFER");
+        ImageIcon transfer = loadImage("src/Assets/Transfer.jpg", 35, 35);
+        transferButton = new JButton("TRANSFER", transfer);
         setFontSize(transferButton, 10);
         setFontStyle(transferButton, Font.BOLD);
-        boundedAdd(transferButton, 465, 440, 100, 50);
+        boundedAdd(transferButton, 435, 440,  120, 50);
         /*=======================================================*/
-        akunButton = new JButton("INFO AKUN");
+        ImageIcon akun = loadImage("src/Assets/InfoAkun.jpg", 35, 35);
+        akunButton = new JButton("INFO AKUN", akun);
         setFontSize(akunButton, 10);
         setFontStyle(akunButton, Font.BOLD);
-        boundedAdd(akunButton, 85, 520, 100, 50);
+        boundedAdd(akunButton, 85, 520,  120, 50);
 
-        editButton = new JButton("EDIT AKUN");
-        setFontSize(editButton, 10);
-        setFontStyle(editButton, Font.BOLD);
-        boundedAdd(editButton, 465, 520, 100, 50);
+        ImageIcon mutasi = loadImage("src/Assets/Mutasi.jpg", 35, 35);
+        mutasiButton = new JButton("MUTASI TRANSAKSI", mutasi);
+        setFontSize(mutasiButton, 10);
+        setFontStyle(mutasiButton, Font.BOLD);
+        boundedAdd(mutasiButton, 435, 520,  120, 50);
         /*=======================================================*/
         logoutButton = new JButton("LOGOUT");
         setFontSize(logoutButton, 10);
@@ -67,6 +93,47 @@ public class GuiMainMenuFrame extends GuiMainUnitFrame {
 
     @Override
     protected void event() {
+        welcomeLabel.setText("Welcome, "+Modelling.getuserMasuk().getFullname());
+        if(showHideRadio.isSelected()){
+            noRekLabel.setText(Modelling.getRekMasuk().getNoRekening());
+        }
+        else{
+            setVisible(false);
+        }
 
+        setorButton.addActionListener((e) -> {
+            new GuiSetorTunaiFrame().setVisible(true);
+            dispose();
+        });
+
+        tarikButton.addActionListener((e) -> {
+            new GuiTarikTunaiFrame().setVisible(true);
+            dispose();
+        });
+
+        saldoButton.addActionListener((e) -> {
+            new GuiInfoSaldoFrame().setVisible(true);
+            dispose();
+        });
+
+        transferButton.addActionListener((e) -> {
+            new GuiTransferTunaiFrame1().setVisible(true);
+            dispose();
+        });
+
+        akunButton.addActionListener((e) -> {
+            new GuiInfoAkunFrame().setVisible(true);
+            dispose();
+        });
+
+        mutasiButton.addActionListener((e) -> {
+            new GuiMutasiRekeningFrame().setVisible(true);
+            dispose();
+        });
+
+        logoutButton.addActionListener((e) -> {
+            new GuiLogOutConfirmFrame().setVisible(true);
+            dispose();
+        });
     }
 }

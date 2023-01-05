@@ -30,8 +30,16 @@ public class CliRegistrationPage {
             kodeAkses = input.nextLine();
             System.out.print("Buat pin: ");
             String pin = input.nextLine();
-            Modelling.register(email, namaLengkap, nik, noTelpon, username, kodeAkses, pin);
-            System.out.println("Berhasil Membuat akun");
+
+            if (Modelling.failed(email, namaLengkap, nik, noTelpon, username, kodeAkses)){
+                System.out.println("Gagal Membuat Akun");
+            }
+            else{
+                Modelling.register(email, namaLengkap, nik, noTelpon, username, kodeAkses, pin);
+                System.out.println("Berhasil Membuat akun");
+            }
+
+
             System.out.println("========================");
         } catch (Exception e){
             System.out.println("Format yang anda masukkan tidak sesuai");
@@ -39,6 +47,7 @@ public class CliRegistrationPage {
     }
     private void example(){
         System.out.println("""
+                Akun: akun1
                 Nama: Coba
                 NIK: 1234
                 No. Telepon: 0987654321
