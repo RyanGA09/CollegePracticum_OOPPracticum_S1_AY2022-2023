@@ -15,7 +15,7 @@ public class EditPasswordPage {
 //        pass = input.nextLine();
         System.out.print("Masukkan kode akses baru : ");
         passbaru = input.nextLine();
-        Authentication.editKodeAkses(passbaru);
+        new Authentication().editKodeAkses(passbaru);
         new CliMainMenuPage();
     }
 }

@@ -2,7 +2,6 @@ package view.cli.viewmainmenupage;
 
 import view.cli.CliMainMenuPage;
 import view.cli.viewmainmenupage.viewedit.EditAkunEmailPage;
-import view.cli.viewmainmenupage.viewedit.EditNoTelponPage;
 import view.cli.viewmainmenupage.viewedit.EditPasswordPage;
 import view.cli.viewmainmenupage.viewedit.EditUsernamePage;
 
@@ -22,8 +21,7 @@ public class CliEditAkunPage {
                 pilihan menu edit:
                 1. Akun Email
                 2. Username
-                3. Nomor Telepon
-                4. Password
+                3. Password
                 0. Return MainPage
                 ======================""");
             System.out.print("masukkan pilihan : ");
@@ -41,13 +39,11 @@ public class CliEditAkunPage {
                 new EditUsernamePage().editUser();
                 break;
             case 3:
-                new EditNoTelponPage().editTelpon();
-                break;
-            case 4:
                 new EditPasswordPage().editPass();
                 break;
-            case 5:
+            case 4:
                 new CliMainMenuPage();
+                break;
             default:
                 System.out.println("Menu tidak valid");;
                 break;

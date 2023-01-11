@@ -27,7 +27,8 @@ public class CliLoginPage {
                 username = input.nextLine();
                 System.out.print("Kode Akses: ");
                 kodeAkses = input.nextLine();
-                if (Authentication.login(username, kodeAkses)) {
+                boolean status = new Authentication().login(username, kodeAkses);
+                if (status) {
                     System.out.println("---------------");
                     System.out.println("Login Berhasil.");
                     System.out.println("---------------");

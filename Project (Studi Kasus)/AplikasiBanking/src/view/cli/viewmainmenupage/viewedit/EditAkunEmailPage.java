@@ -15,7 +15,7 @@ public class EditAkunEmailPage {
 //        email = input.nextLine();
         System.out.print("Masukkan Nama email baru : ");
         emailNew = input.nextLine();
-        Authentication.editEmail(emailNew);
+        new Authentication().editEmail(emailNew);
         new CliMainMenuPage();
     }
 }

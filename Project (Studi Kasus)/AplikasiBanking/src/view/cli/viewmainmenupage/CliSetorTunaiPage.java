@@ -19,11 +19,11 @@ public class CliSetorTunaiPage {
 
     private void setorTunai(){
         System.out.println("------------- SETOR SALDO ------------");
-        if (CliVerifikasiPin.pinVerif()) {
+        if (new CliVerifikasiPin().pinVerif()) {
             System.out.print("Masukan Nominal Saldo: Rp. ");
             int nominal = input.nextInt();
             input.nextLine();
-            Bank.setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
+            new Bank().setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
         }
         System.out.println("---------------------------------------");
     }

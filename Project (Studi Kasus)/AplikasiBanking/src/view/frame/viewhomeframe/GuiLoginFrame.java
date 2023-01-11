@@ -44,8 +44,7 @@ public class GuiLoginFrame extends GuiMainUnitFrame {
         boundedAdd(passwordField, 275, 450, 100, 25);
         /*=======================================================*/
         JLabel noteLabel = new JLabel("""
-                Don’t Have\s
-                an Account?""");
+                Don’t Have an Account?""");
         setFontSize(noteLabel, 15);
         boundedAdd(noteLabel, 65, 480, 125, 100);
 
@@ -59,20 +58,23 @@ public class GuiLoginFrame extends GuiMainUnitFrame {
 
     @Override
         protected void  event(){
-        answerButton.addActionListener((e) -> new GuiRegistrationFrame().setVisible(true));
+        answerButton.addActionListener((e) -> {
+            new GuiRegistrationFrame().setVisible(true);
+            dispose();
+        });
 
          loginButton.addActionListener((e) -> {
              String username = usernameField.getText();
              String password = String.valueOf(passwordField.getPassword());
 
-             boolean status = Authentication.login(username, password);
+             boolean status = new Authentication().login(username, password);
              if(status){
                 new GuiMainMenuFrame().setVisible(true);
                 dispose();
              } else {
-//                 JOptionPane.showMessageDialog(rootPane, e, password, ABORT)
-//                 JOptionPane.showConfirmDialog(null, "Username atau Password salah", "Login gagal", JOptionPane.ERROR_MESSAGE);
                  JOptionPane.showMessageDialog(null, "Username atau Password salah", "Login Gagal", JOptionPane.ERROR_MESSAGE);
+                 new GuiLoginFrame().setVisible(true);
+                 dispose();
              }
          });
     }

@@ -56,17 +56,15 @@ public class GuiSetorTunaiFrame extends GuiMainUnitFrame {
     protected void event() {
 
         setorButton.addActionListener((e) -> {
-            new GuiPinConfirmFrame().setVisible(true);
-            if (new GuiPinConfirmFrame().verif()){
                 try{
                     int nominal = Integer.parseInt(setorfield.getText());
-                    Bank.setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
+                    new Bank().setorTunai(Modelling.getuserMasuk(), new SetorTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
                     JOptionPane.showMessageDialog(null, "Setor Tunai Berhasil", "Setor Berhasil", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception exception){
                     JOptionPane.showMessageDialog(null, "Format Penulisan Angka Salah", "Format Salah", JOptionPane.ERROR_MESSAGE);
                 }
-            }
-            dispose();
+                new GuiMainMenuFrame().setVisible(true);
+                dispose();
         });
 
         cancelButton.addActionListener((e) -> {

@@ -2,6 +2,7 @@ package view.frame;
 
 import model.Modelling;
 import view.frame.viewconfirmation.GuiLogOutConfirmFrame;
+import view.frame.viewconfirmation.GuiPinConfirmFrame;
 import view.frame.viewmainmenuframe.*;
 
 import javax.swing.*;
@@ -10,12 +11,11 @@ import java.awt.*;
 public class GuiMainMenuFrame extends GuiMainUnitFrame {
 
     private JLabel welcomeLabel;
-    private JLabel noRekLabel/*, setorLabel, tariklabel, transferlabel, saldoLabel, akunLabel, mutasiLabel*/;
+    private JLabel noRekLabel;
 
     private JRadioButton showHideRadio;
 
-
-    private JButton transferButton, tarikButton, akunButton, saldoButton, mutasiButton, setorButton, logoutButton/*, editButton*/;
+    private JButton transferButton, tarikButton, akunButton, saldoButton, mutasiButton, setorButton, logoutButton;
 
     public GuiMainMenuFrame(){
         super("MAIN MENU");
@@ -36,7 +36,7 @@ public class GuiMainMenuFrame extends GuiMainUnitFrame {
         setFontSize(welcomeLabel, 15);
         boundedAdd(welcomeLabel, 50, 100, 125, 45);
 
-        noRekLabel = new JLabel();
+        noRekLabel = new JLabel("******");
         setFontSize(noRekLabel, 15);
         boundedAdd(noRekLabel, 50,135, 100, 20);
 
@@ -61,11 +61,6 @@ public class GuiMainMenuFrame extends GuiMainUnitFrame {
         setFontSize(saldoButton, 10);
         setFontStyle(saldoButton, Font.BOLD);
         boundedAdd(saldoButton, 85, 440,  120, 50);
-
-//        mutasiButton = new JButton("MUTASI TRANSAKSI");
-//        setFontSize(mutasiButton, 10);
-//        setFontStyle(mutasiButton, Font.BOLD);
-//        boundedAdd(mutasiButton, 275, 440, 100, 50);
 
         ImageIcon transfer = loadImage("src/Assets/Transfer.jpg", 35, 35);
         transferButton = new JButton("TRANSFER", transfer);
@@ -94,20 +89,23 @@ public class GuiMainMenuFrame extends GuiMainUnitFrame {
     @Override
     protected void event() {
         welcomeLabel.setText("Welcome, "+Modelling.getuserMasuk().getFullname());
-        if(showHideRadio.isSelected()){
-            noRekLabel.setText(Modelling.getRekMasuk().getNoRekening());
-        }
-        else{
-            setVisible(false);
-        }
+
+        showHideRadio.addActionListener((e) -> {
+            if(showHideRadio.isSelected()){
+                noRekLabel.setText(Modelling.getRekMasuk().getNoRekening());
+            }
+            else{
+                noRekLabel.setText("******");
+            }
+        });
 
         setorButton.addActionListener((e) -> {
-            new GuiSetorTunaiFrame().setVisible(true);
+            new GuiPinConfirmFrame(new GuiSetorTunaiFrame()).setVisible(true);
             dispose();
         });
 
         tarikButton.addActionListener((e) -> {
-            new GuiTarikTunaiFrame().setVisible(true);
+            new GuiPinConfirmFrame(new GuiTarikTunaiFrame()).setVisible(true);
             dispose();
         });
 

@@ -1,6 +1,7 @@
 package view.frame.viewconfirmation;
 
 import controller.Bank;
+import model.Modelling;
 import view.frame.GuiMainMenuFrame;
 import view.frame.GuiMainUnitFrame;
 
@@ -9,12 +10,21 @@ import java.awt.*;
 
 public class GuiPinConfirmFrame extends GuiMainUnitFrame {
 
+    int percobaan = 3;
+
+    private GuiMainUnitFrame nextFrame;
+
     private JButton pinButton;
 
     private JPasswordField pinField;
 
     public GuiPinConfirmFrame(){
         super("VERIFIKASI PIN");
+    }
+
+    public GuiPinConfirmFrame(GuiMainUnitFrame nextFrame){
+        super("VERIFIKASI PIN");
+        this.nextFrame = nextFrame;
     }
 
     @Override
@@ -43,17 +53,14 @@ public class GuiPinConfirmFrame extends GuiMainUnitFrame {
 
     @Override
     protected void event() {
-        pinButton.addActionListener((e) -> {
-            verif();
-        });
+        pinButton.addActionListener((e) -> verif());
     }
 
     public boolean verif(){
-        int percobaan = 3;
-        do {
+        String pin = String.valueOf(pinField.getPassword());
+        if (!pin.isBlank()){
+            boolean status = new Bank().pinVerif(pin);
             percobaan -= 1;
-            String pin = String.valueOf(pinField.getPassword());
-            boolean status = Bank.pinVerif(pin);
             if (!status) {
                 if (percobaan == 0){
                     JOptionPane.showMessageDialog(null, "Anda Salah memasukan PIN sebanyak 3x", "Pin Salah", JOptionPane.ERROR_MESSAGE);
@@ -63,16 +70,18 @@ public class GuiPinConfirmFrame extends GuiMainUnitFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "PIN Salah !");
-                    new GuiPinConfirmFrame().setVisible(true);
-                    dispose();
                 }
             }
             else{
                 JOptionPane.showMessageDialog(null, "Verifikasi Berhasil", "Terverifikasi", JOptionPane.INFORMATION_MESSAGE);
+                nextFrame.setVisible(true);
                 dispose();
                 return true;
             }
-        } while(percobaan != 0);
+        }
+        else {
+           JOptionPane.showMessageDialog(null, "Pin Kosong", "Verifikasi Gagal", JOptionPane.ERROR_MESSAGE);
+        }
         return false;
     }
 }

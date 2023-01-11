@@ -1,11 +1,8 @@
 package view.frame.viewmainmenuframe;
 
 import controller.Authentication;
-import controller.Bank;
-import entity.Transfer;
 import entity.User;
 import model.Modelling;
-import utils.Keuangan;
 import view.frame.GuiMainMenuFrame;
 import view.frame.GuiMainUnitFrame;
 import view.frame.viewconfirmation.GuiPinConfirmFrame;
@@ -44,6 +41,9 @@ public class GuiTransferTunaiFrame1 extends GuiMainUnitFrame {
         tujuanField = new JTextField();
         boundedAdd(tujuanField, 280, 360, 100, 25);
 
+        JLabel transferLabel = new JLabel("Jumlah Nominal: ");
+        boundedAdd(transferLabel, 280, 385, 100, 25);
+
         transferField = new JTextField();
         boundedAdd(transferField, 280, 415, 100, 25);
         /*=======================================================*/
@@ -59,7 +59,7 @@ public class GuiTransferTunaiFrame1 extends GuiMainUnitFrame {
         nextButton.addActionListener((e) -> {
             String tujuan = tujuanField.getText();
             String transfer = transferField.getText();
-            User userTujuan = Authentication.cariRekening(tujuan);
+            User userTujuan = new Authentication().cariRekening(tujuan);
             transfer(transfer, userTujuan);
         });
 
@@ -74,15 +74,17 @@ public class GuiTransferTunaiFrame1 extends GuiMainUnitFrame {
             if (!userTujuan.getUsername().equals(Modelling.getuserMasuk().getUsername())){
                 int nominal = Integer.parseInt(transfer);
                 if(nominal < Modelling.getuserMasuk().getRekening().getSaldo()){
-                    new GuiPinConfirmFrame().setVisible(true);
-                    if (new GuiPinConfirmFrame().verif()){
-                        boolean status = Bank.transfer(new Transfer(nominal, Modelling.getuserMasuk(), userTujuan));
-                        if (status){
-                            JOptionPane.showMessageDialog(null, """
-                                Berhasil Transfer Sebesar
-                                Rp.""" + Keuangan.format(nominal), "Transfer Berhasil", JOptionPane.INFORMATION_MESSAGE);
-                        }
-                    }
+                    new GuiPinConfirmFrame(new GuiStatusTransferFrame(userTujuan, nominal)).setVisible(true);
+                    dispose();
+//                    new GuiPinConfirmFrame().setVisible(true);
+//                    if (new GuiPinConfirmFrame().verif()){
+//                        boolean status = Bank.transfer(new Transfer(nominal, Modelling.getuserMasuk(), userTujuan));
+//                        if (status){
+//                            JOptionPane.showMessageDialog(null, """
+//                                Berhasil Transfer Sebesar
+//                                Rp.""" + Keuangan.format(nominal), "Transfer Berhasil", JOptionPane.INFORMATION_MESSAGE);
+//                        }
+//                    }
                 } else {
                     JOptionPane.showMessageDialog(null, "Saldo Tidak Cukup!", "Saldo Kurang", JOptionPane.ERROR_MESSAGE);
                 }

@@ -1,6 +1,10 @@
 package view.cli.viewhomepage;
 
+import controller.Authentication;
+import entity.Rekening;
+import entity.User;
 import model.Modelling;
+import utils.RandomNumberString;
 
 import java.util.Scanner;
 public class CliRegistrationPage {
@@ -31,12 +35,14 @@ public class CliRegistrationPage {
             System.out.print("Buat pin: ");
             String pin = input.nextLine();
 
-            if (Modelling.failed(email, namaLengkap, nik, noTelpon, username, kodeAkses)){
-                System.out.println("Gagal Membuat Akun");
+            User user = new User(email, namaLengkap, nik, noTelpon, username, kodeAkses);
+            Rekening rek = new Rekening(RandomNumberString.getNumeric(6), pin);
+
+            if (new Authentication().tambahUser(user, rek)){
+                System.out.println("Berhasil Membuat akun");
             }
             else{
-                Modelling.register(email, namaLengkap, nik, noTelpon, username, kodeAkses, pin);
-                System.out.println("Berhasil Membuat akun");
+                System.out.println("Gagal Membuat Akun");
             }
 
 

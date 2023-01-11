@@ -41,9 +41,9 @@ public class GuiExitConfirmFrame extends GuiMainUnitFrame {
     protected void event() {
         yesButton.addActionListener((e) -> {
             JOptionPane.showMessageDialog(null, """
-                    --------Keluar Aplikasi-------
+                    --------------Keluar Aplikasi-----------
                     Terima Kasih Atas Kunjungannya
-                    ------------------------------""", "Keluar", JOptionPane.INFORMATION_MESSAGE);
+                    ----------------------------------------------""", "Keluar", JOptionPane.INFORMATION_MESSAGE);
             dispose();
         });
 

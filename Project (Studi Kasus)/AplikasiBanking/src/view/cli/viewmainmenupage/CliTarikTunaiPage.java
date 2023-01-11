@@ -27,6 +27,7 @@ public class CliTarikTunaiPage {
                     4. Rp. 500.000
                     5. Rp. 1.000.000
                     6. Rp. 2.000.000
+                    7. Nominal Lain
                     0. Batal""");
             System.out.print("Pilih: ");
             int pilihNominal = input.nextInt();
@@ -51,6 +52,10 @@ public class CliTarikTunaiPage {
                 case 6:
                     nominal = 2000000;
                     break;
+                case 7:
+                    System.out.println("Nominal Lain:");
+                    nominal = input.nextInt();
+                    break;
                 case 0:
                     break;
                 default:
@@ -58,7 +63,7 @@ public class CliTarikTunaiPage {
                     break;
             }
             if (pilihNominal != 0){
-                boolean status = Bank.tarikTunai(Modelling.getuserMasuk(), new TarikTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
+                boolean status = new Bank().tarikTunai(Modelling.getuserMasuk(), new TarikTunai(nominal, Modelling.getuserMasuk(), Modelling.getuserMasuk()));
                 if (status){
                     System.out.println("Berhasil Tarik Tunai sebesar Rp."+Keuangan.format(nominal));
                 }

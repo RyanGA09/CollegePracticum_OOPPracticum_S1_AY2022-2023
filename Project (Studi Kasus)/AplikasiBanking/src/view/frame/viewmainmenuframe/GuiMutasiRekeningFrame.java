@@ -85,10 +85,9 @@ public class GuiMutasiRekeningFrame extends GuiMainUnitFrame {
                         transaksi.getTanggalTransaksi(),
                         Keuangan.format(transaksi.getNilaiNominal()),
                         setor.getUserAsal().getRekening().getNoRekening(),
-                        setor.getUserAsal().getRekening().getNoRekening(),
+                        setor.getUserAsal().getFullname(),
                         setor.getUserTujuan().getRekening().getNoRekening(),
                         setor.getUserTujuan().getFullname()
-
                 };
                 dataTable.addRow(dataTransaksi);
             } else if (transaksi instanceof TarikTunai) {
@@ -101,7 +100,6 @@ public class GuiMutasiRekeningFrame extends GuiMainUnitFrame {
                         tarik.getUserAsal().getFullname(),
                         tarik.getUserTujuan().getRekening().getNoRekening(),
                         tarik.getUserTujuan().getFullname()
-
                 };
                 dataTable.addRow(dataTransaksi);
             } else if (transaksi instanceof Transfer) {

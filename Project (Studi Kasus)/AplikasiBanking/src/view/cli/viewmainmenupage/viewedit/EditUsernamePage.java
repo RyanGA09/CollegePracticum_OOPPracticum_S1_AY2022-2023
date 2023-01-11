@@ -15,7 +15,7 @@ public class EditUsernamePage {
 //        username = input.nextLine();
         System.out.print("Masukkan Username baru : ");
         usernameNew = input.nextLine();
-        Authentication.editUsername(usernameNew);
+        new Authentication().editUsername(usernameNew);
         new CliMainMenuPage();
     }
 }

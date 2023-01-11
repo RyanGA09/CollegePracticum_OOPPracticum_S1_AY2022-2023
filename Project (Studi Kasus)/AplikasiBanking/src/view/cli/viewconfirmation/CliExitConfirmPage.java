@@ -1,6 +1,5 @@
 package view.cli.viewconfirmation;
 
-//import view.StartPage;
 import view.cli.CliHomePage;
 
 import java.util.Scanner;
@@ -23,6 +22,7 @@ public class CliExitConfirmPage {
             System.out.println("-----Keluar Aplikasi-----");
             System.out.println("Terima kasih Kunjungannya");
             System.out.println("-------------------------");
+            System.exit(0);
         }
         else if (pilihan == 'N' || pilihan == 'n'){
             System.out.println("================================");

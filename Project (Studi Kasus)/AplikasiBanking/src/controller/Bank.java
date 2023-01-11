@@ -5,17 +5,14 @@ import entity.Transfer;
 import entity.User;
 import model.Modelling;
 
-import java.util.Scanner;
-
 public class Bank{
 
-
-    public static void setorTunai(User pengguna, Transaksi transaksi){
+    public void setorTunai(User pengguna, Transaksi transaksi){
         pengguna.getRekening().tambahTransaksi(transaksi);
         pengguna.getRekening().tambahSaldo(transaksi.getNilaiNominal());
     }
 
-    public static boolean tarikTunai(User pengguna, Transaksi transaksi){
+    public boolean tarikTunai(User pengguna, Transaksi transaksi){
         boolean status = pengguna.getRekening().ambilSaldo(transaksi.getNilaiNominal());
         if (status){
             pengguna.getRekening().tambahTransaksi(transaksi);
@@ -23,11 +20,11 @@ public class Bank{
         return status;
     }
 
-    public static boolean transfer(Transaksi transaksi){
+    public boolean transfer(Transaksi transaksi){
         Transfer transfer = (Transfer) transaksi;
         User userAsal = transfer.getUserAsal();
         User userTujuan = transfer.getUserTujuan();
-        for (User akunTujuan : Authentication.getUserTerdaftar()){
+        for (User akunTujuan : Modelling.getUserTerdaftar()){
             if (akunTujuan.getEmail().equals(userTujuan.getEmail())){
                 userTujuan.getRekening().tambahTransaksi(transfer);
                 userTujuan.getRekening().tambahSaldo(transfer.getNilaiNominal());
@@ -39,9 +36,9 @@ public class Bank{
         return false;
     }
 
-    public static boolean pinVerif(String pin){
-        if(Authentication.getUserTerdaftar().size() != 0){
-            for(User pengguna: Authentication.getUserTerdaftar()){
+    public boolean pinVerif(String pin){
+        if(Modelling.getUserTerdaftar().size() != 0){
+            for(User pengguna: Modelling.getUserTerdaftar()){
                 if(pengguna.getRekening().getPin().equals(pin)){
                     Modelling.verifikasiPin(pin);
                 }

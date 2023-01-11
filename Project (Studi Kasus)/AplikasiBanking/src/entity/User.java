@@ -30,10 +30,6 @@ public class User{
         return nik;
     }
 
-    public void setNoTelpon(String noTelpon){
-        this.noTelpon = noTelpon;
-    }
-
     public String getNoTelpon(){
         return noTelpon;
     }

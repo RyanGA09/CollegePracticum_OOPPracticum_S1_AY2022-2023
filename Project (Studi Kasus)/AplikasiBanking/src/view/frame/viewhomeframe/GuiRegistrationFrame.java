@@ -1,14 +1,11 @@
 package view.frame.viewhomeframe;
 
-import controller.Authentication;
 import model.Modelling;
 import view.frame.GuiHomeFrame;
 import view.frame.GuiMainUnitFrame;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.util.EmptyStackException;
 
 public class GuiRegistrationFrame extends GuiMainUnitFrame {
 
@@ -85,34 +82,41 @@ public class GuiRegistrationFrame extends GuiMainUnitFrame {
         boundedAdd(pinField, 275, 540, 100, 25);
         /*=======================================================*/
         JLabel noteLabel = new JLabel("""
-                Already Have\s
-                an Account?""");
+                Already Have an Account?""");
         setFontSize(noteLabel, 15);
-        boundedAdd(noteLabel, 65, 480, 125, 100);
+        boundedAdd(noteLabel, 50, 565, 150, 40);
 
         answerButton = new JButton("YES");
-        boundedAdd(answerButton, 100, 550, 50, 50);
+        boundedAdd(answerButton, 100, 600, 40, 40);
 
         registButton = new JButton("REGISTER");
-        boundedAdd(registButton, 500, 590, 70, 50);
+        boundedAdd(registButton, 475, 600, 75, 45);
     }
 
     @Override
     protected void event() {
         registButton.addActionListener((e) -> {
-                String account = accountField.getText();
-                String name = nameField.getText();
-                String nik = nikField.getText();
-                String phone = noTelponField.getText();
-                String username = usernameField.getText();
-                String pass = String.valueOf(aksesField.getPassword());
-                String pin = String.valueOf(pinField.getPassword());
+            String account = accountField.getText();
+            String name = nameField.getText();
+            String nik = nikField.getText();
+            String phone = noTelponField.getText();
+            String username = usernameField.getText();
+            String pass = String.valueOf(aksesField.getPassword());
+            String pin = String.valueOf(pinField.getPassword());
+            if (!account.isBlank() && !name.isBlank() && !nik.isBlank() && !phone.isBlank() && !username.isBlank() && !pass.isBlank() && !pin.isBlank()){
                 Modelling.register(account, name, nik, phone, username, pass, pin);
                 JOptionPane.showMessageDialog(null, "Berhasil Mendaftar Akun", "Daftar Berhasil", JOptionPane.INFORMATION_MESSAGE);
                 new GuiHomeFrame().setVisible(true);
                 dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Harap isi Data", "Data Tidak Lengkap", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
-        answerButton.addActionListener((e) -> new GuiLoginFrame().setVisible(true));
+        answerButton.addActionListener((e) -> {
+            new GuiLoginFrame().setVisible(true);
+            dispose();
+        });
     }
 }

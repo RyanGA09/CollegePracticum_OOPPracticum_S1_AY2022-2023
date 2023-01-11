@@ -15,21 +15,15 @@ import java.io.IOException;
 import java.io.File;
 
 public abstract class GuiMainUnitFrame extends JFrame {
-    protected Color background = Color.decode("#F5F5F5");
-    Color primaryColor = Color.decode("#336644");
-    Color secondaryColor = Color.decode("#D9D9D9");
-
-    protected String defaultFontName = "Times New Roman";
-    protected int defaultFontSize = 45;
+    protected Color background = Color.decode("#336644");
 
     public GuiMainUnitFrame(String title){
         setTitle(title);
         setSize(700, 700);
-        setBackground(background);
+        getContentPane().setBackground(background);
         setLayout(null);
         setLocation(450, 75);
         setResizable(false);
-//        setIconImage();
     }
 
     @Override
@@ -54,12 +48,6 @@ public abstract class GuiMainUnitFrame extends JFrame {
     protected void setFontSize(Component comp, int size) {
         Font fontLama = comp.getFont();
         Font fontBaru = new Font(fontLama.getFontName(), fontLama.getStyle(), size);
-        comp.setFont(fontBaru);
-    }
-
-    protected void setFontFamily(Component comp, String fontFamily) {
-        Font fontLama = comp.getFont();
-        Font fontBaru = new Font(fontFamily, fontLama.getStyle(), fontLama.getSize());
         comp.setFont(fontBaru);
     }
 
@@ -93,9 +81,5 @@ public abstract class GuiMainUnitFrame extends JFrame {
         width = width + (width/2);
         comp.setBounds(x, y, width, height);
         add(comp);
-    }
-
-    protected Color color(String code) {
-        return Color.decode(code);
     }
 }

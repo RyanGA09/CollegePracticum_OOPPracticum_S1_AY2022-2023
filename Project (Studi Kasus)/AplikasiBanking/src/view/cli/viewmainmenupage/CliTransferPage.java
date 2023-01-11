@@ -22,7 +22,7 @@ public class CliTransferPage {
         System.out.println("------------- TRANSFER ------------");
         System.out.print("Masukan No Rekening Tujuan: ");
         String noRekeningTujuan = input.nextLine();
-        User userTujuan = Authentication.cariRekening(noRekeningTujuan);
+        User userTujuan = new Authentication().cariRekening(noRekeningTujuan);
         if (userTujuan != null){
               if(!userTujuan.getUsername().equals(Modelling.getuserMasuk().getUsername())){
                 System.out.print("Masukan Nominal Transfer  : ");
@@ -40,7 +40,7 @@ public class CliTransferPage {
                     char konfirmasi = input.nextLine().charAt(0);
                     if (konfirmasi == 'Y' || konfirmasi == 'y'){
                         if (new CliVerifikasiPin().pinVerif()){
-                            boolean status = Bank.transfer(new Transfer(nominal, Modelling.getuserMasuk(), userTujuan));
+                            boolean status = new Bank().transfer(new Transfer(nominal, Modelling.getuserMasuk(), userTujuan));
                             if (status){
                                 System.out.println("Berhasil transfer sebesar Rp."+Keuangan.format(nominal));
                             }
