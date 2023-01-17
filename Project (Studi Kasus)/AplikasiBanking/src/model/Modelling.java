@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Modelling {
 
-    static User userMasuk = null;
+    public static User userMasuk = null;
 
     public static ArrayList<User> userTerdaftar = new ArrayList<>();
 
@@ -43,7 +43,7 @@ public class Modelling {
         return Modelling.getuserMasuk().getRekening().getPin().equals(pin);
     }
 
-    public static void register(String akun, String namaLengkap,String nik,String noTelpon,String username,String kodeAkses, String pin){
+    public static void register(String akun, String namaLengkap, String nik, String noTelpon, String username, String kodeAkses, String pin){
         User userBaru = new User(akun, namaLengkap, nik, noTelpon, username, kodeAkses);
         String noRekening = RandomNumberString.getNumeric(6);
         Rekening rekening = new Rekening(noRekening, pin);

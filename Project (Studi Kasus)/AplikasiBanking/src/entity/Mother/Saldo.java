@@ -2,7 +2,7 @@ package entity.Mother;
 
 public class Saldo{
 
-    int jumlahNilaiSaldo = 0;
+    public int jumlahNilaiSaldo = 0;
 
     public void tambahSaldo(int nilai){
         jumlahNilaiSaldo += nilai;
