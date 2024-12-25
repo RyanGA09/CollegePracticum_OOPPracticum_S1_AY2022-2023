@@ -6,4 +6,4 @@ This is a Java programming project for Object Oriented Programming Practices
 
 &copy; 2022 Ryan Gading Abdullah. All rights reserved.
 
-[MIT License](LICENSE)
+This project is licensed under the MIT License - see the [MIT License](LICENSE) for details.
