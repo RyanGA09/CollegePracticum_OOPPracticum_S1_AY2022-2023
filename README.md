@@ -1,6 +1,16 @@
-# Object Oriented Programming Practice
+# College Practicum - Object Oriented Programming First Half Semester AY 2022-2023
 
-This is a Java programming project for Object Oriented Programming Practices
+This project is part of the Object-Oriented Programming practicum for the first half of the Academic Year 2022-2023. The focus of this project is to implement and apply the fundamental principles of Object-Oriented Programming (OOP) using the Java programming language. The goal of this practicum is to develop a deep understanding of core OOP concepts such as encapsulation, inheritance, polymorphism, and abstraction, and to apply these concepts in the development of efficient and well-structured software.
+
+## Features
+- Basic implementation of OOP concepts in Java
+- Use of classes and objects, along with data management through encapsulation
+- Application of inheritance and polymorphism
+- Case studies and exercises based on real-world scenarios
+
+## Author
+
+Ryan Gading Abdullah
 
 ## License
 
